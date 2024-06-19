@@ -25,12 +25,14 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'  # Ensure this matches the Ruby version you use locally
-      
+
+      - name: Install dependencies
+        run: |
+          bundle install
+
       - name: Build Jekyll site
         run: |
-          cd browser
-          bundle install
-          bundle exec jekyll build --destination ../_site
+          bundle exec jekyll build --destination _site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

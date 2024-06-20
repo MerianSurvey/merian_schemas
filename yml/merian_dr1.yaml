@@ -6,17 +6,14 @@ tables:
   "@id": "#Object"
   columns:
   - name: objectId_Merian
-    "@id": "#Object.objectId"
     datatype: long
     description: Unique id. Unique ObjectID
     ivoa:ucd: meta.id;src
   - name: coord_dec_Merian
-    "@id": "#Object.coord_dec"
     datatype: double
     description: Fiducial ICRS Declination of centroid used for database indexing
     fits:tunit: deg
   - name: coord_ra_Merian
-    "@id": "#Object.coord_ra"
     datatype: double
     description: Fiducial ICRS Right Ascension of centroid used for database indexing
     fits:tunit: deg

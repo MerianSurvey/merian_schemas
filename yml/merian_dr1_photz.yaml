@@ -1,8 +1,7 @@
 ---
 name: MerianSchema
 "@id": "#merianPhotZ"
-description: "The photo-z table contains descriptions of the photo-z results using 
-  the GaAP photometry from the Merian DR1 photometric catalog."
+description: "The photo-z table contains descriptions of the photo-z results using the GaAP photometry from the Merian DR1 photometric catalog."
 tables:
 - name: Object
   "@id": "#Object"

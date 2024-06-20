@@ -150,6 +150,93 @@ tables:
     datatype: boolean
     description: Bad pixel in the Source footprint. Measured on X-band.
     fits:tunit:
+  - name: X_pixelFlags_clippedCenter_Merian
+    "@id": "#Object.g_pixelFlags_clippedCenter"
+    datatype: boolean
+    description: Source center is close to CLIPPED pixels. Measured on X-band.
+    fits:tunit:
+  - name: X_pixelFlags_cr_Merian
+    "@id": "#Object.g_pixelFlags_cr"
+    datatype: boolean
+    description: Cosmic ray in the Source footprint. Measured on g-band.
+    fits:tunit:
+  - name: X_pixelFlags_crCenter_Merian
+    "@id": "#Object.g_pixelFlags_crCenter"
+    datatype: boolean
+    description: Cosmic ray in the Source center. Measured on g-band.
+    fits:tunit:
+  - name: X_pixelFlags_edge_Merian
+    "@id": "#Object.g_pixelFlags_edge"
+    datatype: boolean
+    description: Source is outside usable exposure region (masked EDGE or NO_DATA). Measured on X-band.
+    fits:tunit:
+  - name: X_pixelFlags_interpolated_Merian
+    "@id": "#Object.g_pixelFlags_interpolated"
+    datatype: boolean
+    description: Interpolated pixel in the Source footprint. Measured on X-band.
+    fits:tunit:
+  - name: X_pixelFlags_interpolatedCenter_Merian
+    "@id": "#Object.g_pixelFlags_interpolatedCenter"
+    datatype: boolean
+    description: Interpolated pixel in the Source center. Measured on X-band.
+    fits:tunit:
+  - name: X_pixelFlags_saturated_Merian
+    "@id": "#Object.g_pixelFlags_saturated"
+    datatype: boolean
+    description: Saturated pixel in the Source footprint. Measured on X-band.
+    fits:tunit:
+  - name: X_pixelFlags_suspect_Merian
+    "@id": "#Object.g_pixelFlags_suspect"
+    datatype: boolean
+    description: Sources footprint includes suspect pixels. Measured on g-band.
+    fits:tunit:
+  - name: X_pixelFlags_suspectCenter_Merian
+    "@id": "#Object.g_pixelFlags_suspectCenter"
+    datatype: boolean
+    description: Sources center is close to suspect pixels. Measured on g-band.
+    fits:tunit:
+  - name: X_centroid_flag_Merian
+    "@id": "#Object.g_centroid_flag"
+    datatype: boolean
+    description: General Failure Flag. Measured on X-band.
+    fits:tunit:
+
+  - name: dec_HSCS20A
+    "@id": "#Object.coord_dec"
+    datatype: double
+    description: ICRS Declination of object centroid matched in HSC S20A.
+    fits:tunit: deg
+  - name: ra_HSCS20A
+    "@id": "#Object.coord_ra"
+    datatype: double
+    description: ICRS Right Ascension of object centroid matched in HSC S20A.
+    fits:tunit: deg
+  - name: X_extendedness_value_HSCS20A
+    "@id": "#Object.ExtendednessS20A"
+    datatype: double
+    description: Set to 1 for extended sources, 0 for point sources. From HSC S20A.
+    fits:tunit:
+  - name: X_blendedness_abs_HSCS20A
+    "@id": "#Object.BlendednessS20A"
+    datatype: double
+    description: Measure of how much the flux is affected by neighbors, (1 - child_flux/parent_flux). Measured on X-band. From HSC S20A.
+    fits:tunit:
+  - name: hsc_match
+    "@id": "#Object.hsc_match"
+    datatype: boolean
+    description: Set to 1 if a match to HSC-SSP S20A found, 0 otherwise.
+    fits:tunit:
+  - name: PhotUse
+    "@id": "#Object.photuse"
+    datatype: boolean
+    description: Set to 1 when a source is not masked by the bright star mask, 0 otherwise.
+    fits:tunit:
+  - name: SciUse
+    "@id": "#Object.sciuse"
+    datatype: boolean
+    description: Set to 1 if a source is not masked, has a full-color full-depth, likely not a star, fulfill several quality criteria. See Section 5.3 of the Merian survey paper.
+    fits:tunit:
+
   # - name: coord_decErr
   #   "@id": "#Object.coord_decErr"
   #   datatype: float
@@ -687,11 +774,6 @@ tables:
   #   datatype: boolean
   #   description: Propagated from sources. Measured on g-band.
   #   fits:tunit:
-  # - name: g_centroid_flag
-  #   "@id": "#Object.g_centroid_flag"
-  #   datatype: boolean
-  #   description: General Failure Flag. Measured on g-band.
-  #   fits:tunit:
   # - name: g_centroid_x
   #   "@id": "#Object.g_centroid_x"
   #   datatype: double
@@ -1057,26 +1139,7 @@ tables:
   #   datatype: boolean
   #   description: Source footprint includes CLIPPED pixels. Measured on g-band.
   #   fits:tunit:
-  # - name: g_pixelFlags_clippedCenter
-  #   "@id": "#Object.g_pixelFlags_clippedCenter"
-  #   datatype: boolean
-  #   description: Source center is close to CLIPPED pixels. Measured on g-band.
-  #   fits:tunit:
-  # - name: g_pixelFlags_cr
-  #   "@id": "#Object.g_pixelFlags_cr"
-  #   datatype: boolean
-  #   description: Cosmic ray in the Source footprint. Measured on g-band.
-  #   fits:tunit:
-  # - name: g_pixelFlags_crCenter
-  #   "@id": "#Object.g_pixelFlags_crCenter"
-  #   datatype: boolean
-  #   description: Cosmic ray in the Source center. Measured on g-band.
-  #   fits:tunit:
-  # - name: g_pixelFlags_edge
-  #   "@id": "#Object.g_pixelFlags_edge"
-  #   datatype: boolean
-  #   description: Source is outside usable exposure region (masked EDGE or NO_DATA). Measured on g-band.
-  #   fits:tunit:
+
   # - name: g_pixelFlags_inexact_psf
   #   "@id": "#Object.g_pixelFlags_inexact_psf"
   #   datatype: boolean
@@ -1087,26 +1150,13 @@ tables:
   #   datatype: boolean
   #   description: Source center is close to INEXACT_PSF pixels. Measured on g-band.
   #   fits:tunit:
-  # - name: g_pixelFlags_interpolated
-  #   "@id": "#Object.g_pixelFlags_interpolated"
-  #   datatype: boolean
-  #   description: Interpolated pixel in the Source footprint. Measured on g-band.
-  #   fits:tunit:
-  # - name: g_pixelFlags_interpolatedCenter
-  #   "@id": "#Object.g_pixelFlags_interpolatedCenter"
-  #   datatype: boolean
-  #   description: Interpolated pixel in the Source center. Measured on g-band.
-  #   fits:tunit:
+
   # - name: g_pixelFlags_offimage
   #   "@id": "#Object.g_pixelFlags_offimage"
   #   datatype: boolean
   #   description: Source center is off image. Measured on g-band.
   #   fits:tunit:
-  # - name: g_pixelFlags_saturated
-  #   "@id": "#Object.g_pixelFlags_saturated"
-  #   datatype: boolean
-  #   description: Saturated pixel in the Source footprint. Measured on g-band.
-  #   fits:tunit:
+
   # - name: g_pixelFlags_saturatedCenter
   #   "@id": "#Object.g_pixelFlags_saturatedCenter"
   #   datatype: boolean
@@ -1122,16 +1172,7 @@ tables:
   #   datatype: boolean
   #   description: Source center is close to SENSOR_EDGE pixels. Measured on g-band.
   #   fits:tunit:
-  # - name: g_pixelFlags_suspect
-  #   "@id": "#Object.g_pixelFlags_suspect"
-  #   datatype: boolean
-  #   description: Sources footprint includes suspect pixels. Measured on g-band.
-  #   fits:tunit:
-  # - name: g_pixelFlags_suspectCenter
-  #   "@id": "#Object.g_pixelFlags_suspectCenter"
-  #   datatype: boolean
-  #   description: Sources center is close to suspect pixels. Measured on g-band.
-  #   fits:tunit:
+
   # - name: g_pixelFlags_streak
   #   "@id": "#Object.g_pixelFlags_streak"
   #   datatype: boolean
@@ -1153,11 +1194,11 @@ tables:
   #   datatype: float
   #   description: Effective area of PSF. Forced on X-band.
   #   fits:tunit: pixel
-  - name: g_psfFlux_flag
-    "@id": "#Object.g_psfFlux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on X-band.
-    fits:tunit:
+  # - name: g_psfFlux_flag
+  #   "@id": "#Object.g_psfFlux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on X-band.
+  #   fits:tunit:
   # - name: g_psfFlux_flag_apCorr
   #   "@id": "#Object.g_psfFlux_flag_apCorr"
   #   datatype: boolean
@@ -1193,11 +1234,11 @@ tables:
   #   datatype: float
   #   description: Fraction of data that contained good data, ie. 1 - number of no data pixels/total number of pixels in the g-band.
   #   fits:tunit:
-  - name: g_deblend_blendedness
-    "@id": "#Object.g_deblend_blendedness"
-    datatype: float
-    description: Blendedness in the deconvolved scarlet space
-    fits:tunit:
+  # - name: g_deblend_blendedness
+  #   "@id": "#Object.g_deblend_blendedness"
+  #   datatype: float
+  #   description: Blendedness in the deconvolved scarlet space
+  #   fits:tunit:
   # - name: g_deblend_fluxOverlap
   #   "@id": "#Object.g_deblend_fluxOverlap"
   #   datatype: float

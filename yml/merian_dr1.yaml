@@ -4,173 +4,173 @@ name: MerianDR1Schema
 tables:
 - name: Object
   "@id": "#Object"
-  description: The Object table contains descriptions of the multi-epoch static astronomical
-    objects, in particular their astrophysical properties as derived from analysis
-    of the Sources that are associated with them. Note that fast moving objects are
-    kept in the MovingObject tables. Note that less-frequently used columns are stored
-    in a separate table called Object_Extra.
   columns:
-  - name: objectId
+  - name: objectId_Merian
     "@id": "#Object.objectId"
     datatype: long
     description: Unique id. Unique ObjectID
     ivoa:ucd: meta.id;src
-  - name: coord_dec
+  - name: coord_dec_Merian
     "@id": "#Object.coord_dec"
     datatype: double
     description: Fiducial ICRS Declination of centroid used for database indexing
     fits:tunit: deg
-  - name: coord_ra
+  - name: coord_ra_Merian
     "@id": "#Object.coord_ra"
     datatype: double
     description: Fiducial ICRS Right Ascension of centroid used for database indexing
     fits:tunit: deg
-  - name: coord_decErr
-    "@id": "#Object.coord_decErr"
-    datatype: float
-    description: Error in fiducial ICRS Declination of centroid.
-    fits:tunit: deg
-  - name: coord_raErr
-    "@id": "#Object.coord_raErr"
-    datatype: float
-    description: Error in fiducial ICRS Right Ascension of centroid.
-    fits:tunit: deg
-  - name: coord_ra_dec_Cov
-    "@id": "#Object.coord_ra_dec_Cov"
-    datatype: float
-    description: Covariance between fiducial ICRS Right Ascension and Declination of centroid.
-    fits:tunit: deg**2
-  - name: deblend_nChild
-    "@id": "#Object.deblend_nChild"
-    datatype: int
-    description: Number of children this object has (defaults to 0)
-    fits:tunit:
-  - name: deblend_nPeaks
-    "@id": "#Object.deblend_nPeaks"
-    datatype: int
-    description: Number of peaks this parent footprint has (even if the deblender failed or skipped this blend)
-    fits:tunit:
-  - name: deblend_failed
-    "@id": "#Object.deblend_failed"
-    datatype: boolean
-    description: Deblender failed to deblend this source
-    fits:tunit:
-  - name: deblend_skipped
-    "@id": "#Object.deblend_skipped"
-    datatype: boolean
-    description: Deblender skipped this source
-    fits:tunit:
-  - name: deblend_isolatedParent
-    "@id": "#Object.deblend_isolatedParent"
-    datatype: boolean
-    description: Deblender skipped this footprint because there was only a single peak
-    fits:tunit:
-  - name: deblend_parentTooBig
-    "@id": "#Object.deblend_parentTooBig"
-    datatype: boolean
-    description: Deblender skipped this source because the parent footprint was too large.
-    fits:tunit:
-  - name: deblend_tooManyPeaks
-    "@id": "#Object.deblend_tooManyPeaks"
-    datatype: boolean
-    description: Deblender skipped this source because there were too many peaks in the Footprint.
-    fits:tunit:
-  - name: deblend_masked
-    "@id": "#Object.deblend_masked"
-    datatype: boolean
-    description: Deblender skipped this source because there were too many masked pixels.
-    fits:tunit:
-  - name: deblend_incompleteData
-    "@id": "#Object.deblend_incompleteData"
-    datatype: boolean
-    description: One or more bands were not deblended due to an inability to model the PSF.
-    fits:tunit:
-  - name: deblend_iterations
-    "@id": "#Object.deblend_iterations"
-    datatype: int
-    description: Number of iterations during deblending
-    fits:tunit:
-  - name: deblend_peak_center_x
-    "@id": "#Object.deblend_peak_center_x"
-    datatype: int
-    description: x-coordinate of the peak after source detection
-    fits:tunit: pixel
-  - name: deblend_peak_center_y
-    "@id": "#Object.deblend_peak_center_y"
-    datatype: int
-    description: y-coordinate of the peak after source detection
-    fits:tunit: pixel
-  - name: deblend_logL
-    "@id": "#Object.deblend_logL"
-    datatype: float
-    description: Log likelihood of the entire blend in scarlet_lite.
-    fits:tunit:
-  - name: detect_fromBlend
-    "@id": "#Object.detect_fromBlend"
-    datatype: boolean
-    description: This source is deblended from a parent with more than one child.
-    fits:tunit:
-  - name: detect_isDeblendedModelSource
-    "@id": "#Object.detect_isDeblendedModelSource"
-    datatype: boolean
-    description: True if source has no children and is in the inner region of a coadd patch and is in the inner region of a coadd tract and is not detected in a pseudo-filter (see config.pseudoFilterList) and is a deblended child
-    fits:tunit:
-  - name: detect_isDeblendedSource
-    "@id": "#Object.detect_isDeblendedSource"
-    datatype: boolean
-    description: True if source has no children and is in the inner region of a coadd patch and is in the inner region of a coadd tract and is not detected in a pseudo-filter (see config.pseudoFilterList) and is either an unblended isolated source or a deblended child from a parent with
-    fits:tunit:
-  - name: detect_isIsolated
-    "@id": "#Object.detect_isIsolated"
-    datatype: boolean
-    description: This source is not a part of a blend.
-    fits:tunit:
-  - name: detect_isPatchInner
-    "@id": "#Object.detect_isPatchInner"
-    datatype: boolean
-    description: True if source is in the inner region of a coadd patch
-    fits:tunit:
-  - name: detect_isPrimary
+  # - name: coord_decErr
+  #   "@id": "#Object.coord_decErr"
+  #   datatype: float
+  #   description: Error in fiducial ICRS Declination of centroid.
+  #   fits:tunit: deg
+  # - name: coord_raErr
+  #   "@id": "#Object.coord_raErr"
+  #   datatype: float
+  #   description: Error in fiducial ICRS Right Ascension of centroid.
+  #   fits:tunit: deg
+  # - name: coord_ra_dec_Cov
+  #   "@id": "#Object.coord_ra_dec_Cov"
+  #   datatype: float
+  #   description: Covariance between fiducial ICRS Right Ascension and Declination of centroid.
+  #   fits:tunit: deg**2
+  # - name: deblend_nChild
+  #   "@id": "#Object.deblend_nChild"
+  #   datatype: int
+  #   description: Number of children this object has (defaults to 0)
+  #   fits:tunit:
+  # - name: deblend_nPeaks
+  #   "@id": "#Object.deblend_nPeaks"
+  #   datatype: int
+  #   description: Number of peaks this parent footprint has (even if the deblender failed or skipped this blend)
+  #   fits:tunit:
+  # - name: deblend_failed
+  #   "@id": "#Object.deblend_failed"
+  #   datatype: boolean
+  #   description: Deblender failed to deblend this source
+  #   fits:tunit:
+  # - name: deblend_skipped
+  #   "@id": "#Object.deblend_skipped"
+  #   datatype: boolean
+  #   description: Deblender skipped this source
+  #   fits:tunit:
+  # - name: deblend_isolatedParent
+  #   "@id": "#Object.deblend_isolatedParent"
+  #   datatype: boolean
+  #   description: Deblender skipped this footprint because there was only a single peak
+  #   fits:tunit:
+  # - name: deblend_parentTooBig
+  #   "@id": "#Object.deblend_parentTooBig"
+  #   datatype: boolean
+  #   description: Deblender skipped this source because the parent footprint was too large.
+  #   fits:tunit:
+  # - name: deblend_tooManyPeaks
+  #   "@id": "#Object.deblend_tooManyPeaks"
+  #   datatype: boolean
+  #   description: Deblender skipped this source because there were too many peaks in the Footprint.
+  #   fits:tunit:
+  # - name: deblend_masked
+  #   "@id": "#Object.deblend_masked"
+  #   datatype: boolean
+  #   description: Deblender skipped this source because there were too many masked pixels.
+  #   fits:tunit:
+  # - name: deblend_incompleteData
+  #   "@id": "#Object.deblend_incompleteData"
+  #   datatype: boolean
+  #   description: One or more bands were not deblended due to an inability to model the PSF.
+  #   fits:tunit:
+  # - name: deblend_iterations
+  #   "@id": "#Object.deblend_iterations"
+  #   datatype: int
+  #   description: Number of iterations during deblending
+  #   fits:tunit:
+  # - name: deblend_peak_center_x
+  #   "@id": "#Object.deblend_peak_center_x"
+  #   datatype: int
+  #   description: x-coordinate of the peak after source detection
+  #   fits:tunit: pixel
+  # - name: deblend_peak_center_y
+  #   "@id": "#Object.deblend_peak_center_y"
+  #   datatype: int
+  #   description: y-coordinate of the peak after source detection
+  #   fits:tunit: pixel
+  # - name: deblend_logL
+  #   "@id": "#Object.deblend_logL"
+  #   datatype: float
+  #   description: Log likelihood of the entire blend in scarlet_lite.
+  #   fits:tunit:
+  # - name: detect_fromBlend
+  #   "@id": "#Object.detect_fromBlend"
+  #   datatype: boolean
+  #   description: This source is deblended from a parent with more than one child.
+  #   fits:tunit:
+  # - name: detect_isDeblendedModelSource
+  #   "@id": "#Object.detect_isDeblendedModelSource"
+  #   datatype: boolean
+  #   description: True if source has no children and is in the inner region of a coadd patch and is in the inner region of a coadd tract and is not detected in a pseudo-filter (see config.pseudoFilterList) and is a deblended child
+  #   fits:tunit:
+  # - name: detect_isDeblendedSource
+  #   "@id": "#Object.detect_isDeblendedSource"
+  #   datatype: boolean
+  #   description: True if source has no children and is in the inner region of a coadd patch and is in the inner region of a coadd tract and is not detected in a pseudo-filter (see config.pseudoFilterList) and is either an unblended isolated source or a deblended child from a parent with
+  #   fits:tunit:
+  # - name: detect_isIsolated
+  #   "@id": "#Object.detect_isIsolated"
+  #   datatype: boolean
+  #   description: This source is not a part of a blend.
+  #   fits:tunit:
+  # - name: detect_isPatchInner
+  #   "@id": "#Object.detect_isPatchInner"
+  #   datatype: boolean
+  #   description: True if source is in the inner region of a coadd patch
+  #   fits:tunit:
+  - name: detect_isPrimary_Merian
     "@id": "#Object.detect_isPrimary"
     datatype: boolean
     description: True if source has no children and is in the inner region of a coadd patch and is in the inner region of a coadd tract and is not detected in a pseudo-filter (see config.pseudoFilterList)
     fits:tunit:
-  - name: detect_isTractInner
-    "@id": "#Object.detect_isTractInner"
-    datatype: boolean
-    description: True if source is in the inner region of a coadd tract
-    fits:tunit:
-  - name: ebv
+  # - name: detect_isTractInner
+  #   "@id": "#Object.detect_isTractInner"
+  #   datatype: boolean
+  #   description: True if source is in the inner region of a coadd tract
+  #   fits:tunit:
+  - name: ebv_Merian
     "@id": "#Object.ebv"
     datatype: double
     description: E(B-V) at coord_ra/coord_dec per Schlegel, Finkbeiner & Davis (1998)
     fits:tunit: mag
-  - name: footprintArea
-    "@id": "#Object.footprintArea"
-    datatype: int
-    description: Number of pixels in the sources detection footprint. Reference band.
-    fits:tunit: pixel
-  - name: merge_peak_sky
-    "@id": "#Object.merge_peak_sky"
-    datatype: boolean
-    description: Peak detected in filter sky
-    fits:tunit:
-  - name: parentObjectId
-    "@id": "#Object.parentObjectId"
+  # - name: footprintArea
+  #   "@id": "#Object.footprintArea"
+  #   datatype: int
+  #   description: Number of pixels in the sources detection footprint. Reference band.
+  #   fits:tunit: pixel
+  # - name: merge_peak_sky
+  #   "@id": "#Object.merge_peak_sky"
+  #   datatype: boolean
+  #   description: Peak detected in filter sky
+  #   fits:tunit:
+  # - name: parentObjectId
+  #   "@id": "#Object.parentObjectId"
+  #   datatype: long
+  #   description: Unique ID of parent source. Reference band.
+  #   fits:tunit:
+  - name: tract_Merian
+    "@id": "#Object.tract"
     datatype: long
-    description: Unique ID of parent source. Reference band.
+    description: Skymap tract ID
     fits:tunit:
-  - name: patch
+  - name: patch_Merian
     "@id": "#Object.patch"
     datatype: long
     description: Skymap patch ID
     fits:tunit:
-  - name: refBand
-    "@id": "#Object.refBand"
-    datatype: char
-    length: 1
-    description: Reference band - parameters measured on coadds of this band were used for multi-band forced photometry
-    fits:tunit:
+  # - name: refBand
+  #   "@id": "#Object.refBand"
+  #   datatype: char
+  #   length: 1
+  #   description: Reference band - parameters measured on coadds of this band were used for multi-band forced photometry
+  #   fits:tunit:
   - name: refExtendedness
     "@id": "#Object.refExtendedness"
     datatype: double
@@ -186,437 +186,564 @@ tables:
     datatype: double
     description: Estimated FWHM on the reference band at source center assuming a Gaussian profile
     fits:tunit:
-  - name: shape_flag
-    "@id": "#Object.shape_flag"
-    datatype: boolean
-    description: General failure flag, set if anything went wrong. Reference band.
-    fits:tunit:
-  - name: shape_xx
-    "@id": "#Object.shape_xx"
-    datatype: double
-    description: HSM moments. Reference band.
-    fits:tunit: pixel**2
-  - name: shape_xy
-    "@id": "#Object.shape_xy"
-    datatype: double
-    description: HSM moments. Reference band.
-    fits:tunit: pixel**2
-  - name: shape_yy
-    "@id": "#Object.shape_yy"
-    datatype: double
-    description: HSM moments. Reference band.
-    fits:tunit: pixel**2
-  - name: sky_object
-    "@id": "#Object.sky_object"
-    datatype: boolean
-    description: No source was detected here. This object exists to characterize properties of the sky background
-    fits:tunit:
-  - name: tract
-    "@id": "#Object.tract"
-    datatype: long
-    description: Skymap tract ID
-    fits:tunit:
-  - name: x
-    "@id": "#Object.x"
-    datatype: double
-    description: Centroid from Sdss Centroid algorithm. Reference band.
-    fits:tunit: pixel
-  - name: xErr
-    "@id": "#Object.xErr"
-    datatype: float
-    description: 1-sigma uncertainty on x position. Reference band.
-    fits:tunit: pixel
-  - name: xy_flag
-    "@id": "#Object.xy_flag"
-    datatype: boolean
-    description: General Failure Flag. Reference band.
-    fits:tunit:
-  - name: y
-    "@id": "#Object.y"
-    datatype: double
-    description: Centroid from Sdss Centroid algorithm. Reference band.
-    fits:tunit: pixel
-  - name: yErr
-    "@id": "#Object.yErr"
-    datatype: float
-    description: 1-sigma uncertainty on y position. Reference band.
-    fits:tunit: pixel
-  - name: g_ap03Flux
-    "@id": "#Object.g_ap03Flux"
-    datatype: double
-    description: Flux within 3.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap03FluxErr
-    "@id": "#Object.g_ap03FluxErr"
-    datatype: double
-    description: Flux uncertainty within 3.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap03Flux_flag
-    "@id": "#Object.g_ap03Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap06Flux
-    "@id": "#Object.g_ap06Flux"
-    datatype: double
-    description: Flux within 6.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap06FluxErr
-    "@id": "#Object.g_ap06FluxErr"
-    datatype: double
-    description: Flux uncertainty within 6.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap06Flux_flag
-    "@id": "#Object.g_ap06Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap09Flux
-    "@id": "#Object.g_ap09Flux"
-    datatype: double
-    description: Flux within 9.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap09FluxErr
-    "@id": "#Object.g_ap09FluxErr"
-    datatype: double
-    description: Flux uncertainty within 9.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap09Flux_flag
-    "@id": "#Object.g_ap09Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap12Flux
-    "@id": "#Object.g_ap12Flux"
-    datatype: double
-    description: Flux within 12.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap12FluxErr
-    "@id": "#Object.g_ap12FluxErr"
-    datatype: double
-    description: Flux uncertainty within 12.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap12Flux_flag
-    "@id": "#Object.g_ap12Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap17Flux
-    "@id": "#Object.g_ap17Flux"
-    datatype: double
-    description: Flux within 17.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap17FluxErr
-    "@id": "#Object.g_ap17FluxErr"
-    datatype: double
-    description: Flux uncertainty within 17.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap17Flux_flag
-    "@id": "#Object.g_ap17Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap25Flux
-    "@id": "#Object.g_ap25Flux"
-    datatype: double
-    description: Flux within 25.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap25FluxErr
-    "@id": "#Object.g_ap25FluxErr"
-    datatype: double
-    description: Flux uncertainty within 25.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap25Flux_flag
-    "@id": "#Object.g_ap25Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap35Flux
-    "@id": "#Object.g_ap35Flux"
-    datatype: double
-    description: Flux within 35.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap35FluxErr
-    "@id": "#Object.g_ap35FluxErr"
-    datatype: double
-    description: Flux uncertainty within 35.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap35Flux_flag
-    "@id": "#Object.g_ap35Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap50Flux
-    "@id": "#Object.g_ap50Flux"
-    datatype: double
-    description: Flux within 50.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap50FluxErr
-    "@id": "#Object.g_ap50FluxErr"
-    datatype: double
-    description: Flux uncertainty within 50.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap50Flux_flag
-    "@id": "#Object.g_ap50Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_ap70Flux
-    "@id": "#Object.g_ap70Flux"
-    datatype: double
-    description: Flux within 70.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap70FluxErr
-    "@id": "#Object.g_ap70FluxErr"
-    datatype: double
-    description: Flux uncertainty within 70.0-pixel aperture. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_ap70Flux_flag
-    "@id": "#Object.g_ap70Flux_flag"
-    datatype: boolean
-    description: General Failure Flag. Forced on g-band.
-    fits:tunit:
-  - name: g_apFlux_flag
-    "@id": "#Object.g_apFlux_flag"
-    datatype: boolean
-    description: General Failure Flag. Measured on g-band.
-    fits:tunit:
-  - name: g_apFlux_flag_apertureTruncated
-    "@id": "#Object.g_apFlux_flag_apertureTruncated"
-    datatype: boolean
-    description: Aperture did not fit within measurement image. Measured on g-band.
-    fits:tunit:
-  - name: g_apFlux_flag_sincCoeffsTruncated
-    "@id": "#Object.g_apFlux_flag_sincCoeffsTruncated"
-    datatype: boolean
-    description: Full sinc coefficient image did not fit within measurement image. Measured on g-band.
-    fits:tunit:
-  - name: g_bdChi2
-    "@id": "#Object.g_bdChi2"
-    datatype: double
-    description: -ln(likelihood) (chi^2) in cmodel fit. Measured on g-band.
-    fits:tunit:
-  - name: g_bdE1
-    "@id": "#Object.g_bdE1"
-    datatype: double
-    description: FracDev-weighted average of exp.ellipse and dev.ellipse. Measured on g-band.
-    fits:tunit: pixel**2
-  - name: g_bdE2
-    "@id": "#Object.g_bdE2"
-    datatype: double
-    description: FracDev-weighted average of exp.ellipse and dev.ellipse. Measured on g-band.
-    fits:tunit: pixel**2
-  - name: g_bdFluxB
-    "@id": "#Object.g_bdFluxB"
-    datatype: double
-    description: Flux from the de Vaucouleur fit. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_bdFluxBErr
-    "@id": "#Object.g_bdFluxBErr"
-    datatype: double
-    description: Flux uncertainty from the de Vaucouleur fit. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_bdFluxD
-    "@id": "#Object.g_bdFluxD"
-    datatype: double
-    description: Flux from the exponential fit. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_bdFluxDErr
-    "@id": "#Object.g_bdFluxDErr"
-    datatype: double
-    description: Flux uncertainty from the exponential fit. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_bdReB
-    "@id": "#Object.g_bdReB"
-    datatype: double
-    description: Half-light ellipse of the de Vaucouleur fit. Measured on g-band.
-    fits:tunit: pixel**2
-  - name: g_bdReD
-    "@id": "#Object.g_bdReD"
-    datatype: double
-    description: Half-light ellipse of the exponential fit. Measured on g-band.
-    fits:tunit: pixel**2
-  - name: g_blendedness
-    "@id": "#Object.g_blendedness"
-    datatype: double
-    description: Measure of how much the flux is affected by neighbors, (1 - child_flux/parent_flux).  Operates on the absolute value of the pixels to try to obtain a de-noised value.  See section 4.9.11 of Bosch et al. 2018, PASJ, 70, S5 for details. Measured on g-band.
-    fits:tunit:
-  - name: g_blendedness_flag
-    "@id": "#Object.g_blendedness_flag"
-    datatype: boolean
-    description: General Failure Flag. Measured on g-band.
-    fits:tunit:
-  - name: g_cModelFlux
-    "@id": "#Object.g_cModelFlux"
-    datatype: double
-    description: Flux from the final cmodel fit. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_cModelFluxErr
-    "@id": "#Object.g_cModelFluxErr"
-    datatype: double
-    description: Flux uncertainty from the final cmodel fit. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_cModelFlux_inner
-    "@id": "#Object.g_cModelFlux_inner"
-    datatype: double
-    description: Flux within the fit region, with no extrapolation. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_cModel_flag
-    "@id": "#Object.g_cModel_flag"
-    datatype: boolean
-    description: Flag set if the final cmodel fit (or any previous fit) failed. Forced on g-band.
-    fits:tunit:
-  - name: g_cModel_flag_apCorr
-    "@id": "#Object.g_cModel_flag_apCorr"
-    datatype: boolean
-    description: Set if unable to aperture correct modelfit_CModel. Forced on g-band.
-    fits:tunit:
-  - name: g_calibFlux
-    "@id": "#Object.g_calibFlux"
-    datatype: double
-    description: Flux within 12.0-pixel aperture. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_calibFluxErr
-    "@id": "#Object.g_calibFluxErr"
-    datatype: double
-    description: Flux uncertainty within 12.0-pixel aperture. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_calibFlux_flag
-    "@id": "#Object.g_calibFlux_flag"
-    datatype: boolean
-    description: General Failure Flag. Measured on g-band.
-    fits:tunit:
-  - name: g_calibFlux_flag_apertureTruncated
-    "@id": "#Object.g_calibFlux_flag_apertureTruncated"
-    datatype: boolean
-    description: Aperture did not fit within measurement image. Measured on g-band.
-    fits:tunit:
-  - name: g_calibFlux_flag_sincCoeffsTruncated
-    "@id": "#Object.g_calibFlux_flag_sincCoeffsTruncated"
-    datatype: boolean
-    description: Full sinc coefficient image did not fit within measurement image. Measured on g-band.
-    fits:tunit:
-  - name: g_calib_astrometry_used
-    "@id": "#Object.g_calib_astrometry_used"
-    datatype: boolean
-    description: Propagated from sources. Measured on g-band.
-    fits:tunit:
-  - name: g_calib_photometry_reserved
-    "@id": "#Object.g_calib_photometry_reserved"
-    datatype: boolean
-    description: Propagated from sources. Measured on g-band.
-    fits:tunit:
-  - name: g_calib_photometry_used
-    "@id": "#Object.g_calib_photometry_used"
-    datatype: boolean
-    description: Propagated from sources. Measured on g-band.
-    fits:tunit:
-  - name: g_calib_psf_candidate
-    "@id": "#Object.g_calib_psf_candidate"
-    datatype: boolean
-    description: Propagated from sources. Measured on g-band.
-    fits:tunit:
-  - name: g_calib_psf_reserved
-    "@id": "#Object.g_calib_psf_reserved"
-    datatype: boolean
-    description: Propagated from sources. Measured on g-band.
-    fits:tunit:
-  - name: g_calib_psf_used
-    "@id": "#Object.g_calib_psf_used"
-    datatype: boolean
-    description: Propagated from sources. Measured on g-band.
-    fits:tunit:
-  - name: g_centroid_flag
-    "@id": "#Object.g_centroid_flag"
-    datatype: boolean
-    description: General Failure Flag. Measured on g-band.
-    fits:tunit:
-  - name: g_centroid_x
-    "@id": "#Object.g_centroid_x"
-    datatype: double
-    description: Centroid from Sdss Centroid algorithm. Measured on g-band.
-    fits:tunit: pixel
-  - name: g_centroid_xErr
-    "@id": "#Object.g_centroid_xErr"
-    datatype: float
-    description: 1-sigma uncertainty on x position. Measured on g-band.
-    fits:tunit: pixel
-  - name: g_centroid_y
-    "@id": "#Object.g_centroid_y"
-    datatype: double
-    description: Centroid from Sdss Centroid algorithm. Measured on g-band.
-    fits:tunit: pixel
-  - name: g_centroid_yErr
-    "@id": "#Object.g_centroid_yErr"
-    datatype: float
-    description: 1-sigma uncertainty on y position. Measured on g-band.
-    fits:tunit: pixel
-  - name: g_dec
-    "@id": "#Object.g_dec"
-    datatype: double
-    description: Position in declination, measured on g-band.
-    fits:tunit: deg
-  - name: g_decErr
-    "@id": "#Object.g_decErr"
-    datatype: float
-    description: Error in declination, measured on g-band.
-    fits:tunit: deg
-  - name: g_decl
-    "@id": "#Object.g_decl"
-    datatype: double
-    description: Deprecated duplicate of g_dec.
-    fits:tunit: deg
-    ivoa:ucd: pos.eq.dec
-  - name: g_extendedness
-    "@id": "#Object.g_extendedness"
-    datatype: double
-    description: Set to 1 for extended sources, 0 for point sources. Measured on g-band.
-    fits:tunit:
-  - name: g_extendedness_flag
-    "@id": "#Object.g_extendedness_flag"
-    datatype: boolean
-    description: Set to 1 for any fatal failure. Measured on g-band.
-    fits:tunit:
-  - name: g_sizeExtendedness
-    "@id": "#Object.g_sizeExtendedness"
-    datatype: double
-    description: Moments-based measure of an object to be a galaxy. Measured on g-band.
-    fits:tunit:
-  - name: g_sizeExtendedness_flag
-    "@id": "#Object.g_sizeExtendedness_flag"
-    datatype: boolean
-    description: Set to 1 for any fatal failure. Measured on g-band.
-    fits:tunit:
-  - name: g_free_cModelFlux
-    "@id": "#Object.g_free_cModelFlux"
-    datatype: double
-    description: Flux from the final cmodel fit. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_free_cModelFluxErr
-    "@id": "#Object.g_free_cModelFluxErr"
-    datatype: double
-    description: Flux uncertainty from the final cmodel fit. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_free_cModelFlux_flag
-    "@id": "#Object.g_free_cModelFlux_flag"
-    datatype: boolean
-    description: Flag set if the final cmodel fit (or any previous fit) failed. Measured on g-band.
-    fits:tunit:
-  - name: g_free_cModelFlux_inner
-    "@id": "#Object.g_free_cModelFlux_inner"
-    datatype: double
-    description: Flux within the fit region, with no extrapolation. Measured on g-band.
-    fits:tunit: nJy
-  - name: g_free_psfFlux
+  # - name: shape_flag
+  #   "@id": "#Object.shape_flag"
+  #   datatype: boolean
+  #   description: General failure flag, set if anything went wrong. Reference band.
+  #   fits:tunit:
+  # - name: shape_xx
+  #   "@id": "#Object.shape_xx"
+  #   datatype: double
+  #   description: HSM moments. Reference band.
+  #   fits:tunit: pixel**2
+  # - name: shape_xy
+  #   "@id": "#Object.shape_xy"
+  #   datatype: double
+  #   description: HSM moments. Reference band.
+  #   fits:tunit: pixel**2
+  # - name: shape_yy
+  #   "@id": "#Object.shape_yy"
+  #   datatype: double
+  #   description: HSM moments. Reference band.
+  #   fits:tunit: pixel**2
+  # - name: sky_object
+  #   "@id": "#Object.sky_object"
+  #   datatype: boolean
+  #   description: No source was detected here. This object exists to characterize properties of the sky background
+  #   fits:tunit:
+  # - name: x
+  #   "@id": "#Object.x"
+  #   datatype: double
+  #   description: Centroid from Sdss Centroid algorithm. Reference band.
+  #   fits:tunit: pixel
+  # - name: xErr
+  #   "@id": "#Object.xErr"
+  #   datatype: float
+  #   description: 1-sigma uncertainty on x position. Reference band.
+  #   fits:tunit: pixel
+  # - name: xy_flag
+  #   "@id": "#Object.xy_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Reference band.
+  #   fits:tunit:
+  # - name: y
+  #   "@id": "#Object.y"
+  #   datatype: double
+  #   description: Centroid from Sdss Centroid algorithm. Reference band.
+  #   fits:tunit: pixel
+  # - name: yErr
+  #   "@id": "#Object.yErr"
+  #   datatype: float
+  #   description: 1-sigma uncertainty on y position. Reference band.
+  #   fits:tunit: pixel
+  # - name: g_ap03Flux
+  #   "@id": "#Object.g_ap03Flux"
+  #   datatype: double
+  #   description: Flux within 3.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap03FluxErr
+  #   "@id": "#Object.g_ap03FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 3.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap03Flux_flag
+  #   "@id": "#Object.g_ap03Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap06Flux
+  #   "@id": "#Object.g_ap06Flux"
+  #   datatype: double
+  #   description: Flux within 6.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap06FluxErr
+  #   "@id": "#Object.g_ap06FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 6.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap06Flux_flag
+  #   "@id": "#Object.g_ap06Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap09Flux
+  #   "@id": "#Object.g_ap09Flux"
+  #   datatype: double
+  #   description: Flux within 9.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap09FluxErr
+  #   "@id": "#Object.g_ap09FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 9.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap09Flux_flag
+  #   "@id": "#Object.g_ap09Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap12Flux
+  #   "@id": "#Object.g_ap12Flux"
+  #   datatype: double
+  #   description: Flux within 12.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap12FluxErr
+  #   "@id": "#Object.g_ap12FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 12.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap12Flux_flag
+  #   "@id": "#Object.g_ap12Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap17Flux
+  #   "@id": "#Object.g_ap17Flux"
+  #   datatype: double
+  #   description: Flux within 17.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap17FluxErr
+  #   "@id": "#Object.g_ap17FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 17.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap17Flux_flag
+  #   "@id": "#Object.g_ap17Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap25Flux
+  #   "@id": "#Object.g_ap25Flux"
+  #   datatype: double
+  #   description: Flux within 25.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap25FluxErr
+  #   "@id": "#Object.g_ap25FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 25.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap25Flux_flag
+  #   "@id": "#Object.g_ap25Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap35Flux
+  #   "@id": "#Object.g_ap35Flux"
+  #   datatype: double
+  #   description: Flux within 35.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap35FluxErr
+  #   "@id": "#Object.g_ap35FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 35.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap35Flux_flag
+  #   "@id": "#Object.g_ap35Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap50Flux
+  #   "@id": "#Object.g_ap50Flux"
+  #   datatype: double
+  #   description: Flux within 50.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap50FluxErr
+  #   "@id": "#Object.g_ap50FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 50.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap50Flux_flag
+  #   "@id": "#Object.g_ap50Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_ap70Flux
+  #   "@id": "#Object.g_ap70Flux"
+  #   datatype: double
+  #   description: Flux within 70.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap70FluxErr
+  #   "@id": "#Object.g_ap70FluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 70.0-pixel aperture. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_ap70Flux_flag
+  #   "@id": "#Object.g_ap70Flux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_apFlux_flag
+  #   "@id": "#Object.g_apFlux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_apFlux_flag_apertureTruncated
+  #   "@id": "#Object.g_apFlux_flag_apertureTruncated"
+  #   datatype: boolean
+  #   description: Aperture did not fit within measurement image. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_apFlux_flag_sincCoeffsTruncated
+  #   "@id": "#Object.g_apFlux_flag_sincCoeffsTruncated"
+  #   datatype: boolean
+  #   description: Full sinc coefficient image did not fit within measurement image. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_bdChi2
+  #   "@id": "#Object.g_bdChi2"
+  #   datatype: double
+  #   description: -ln(likelihood) (chi^2) in cmodel fit. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_bdE1
+  #   "@id": "#Object.g_bdE1"
+  #   datatype: double
+  #   description: FracDev-weighted average of exp.ellipse and dev.ellipse. Measured on g-band.
+  #   fits:tunit: pixel**2
+  # - name: g_bdE2
+  #   "@id": "#Object.g_bdE2"
+  #   datatype: double
+  #   description: FracDev-weighted average of exp.ellipse and dev.ellipse. Measured on g-band.
+  #   fits:tunit: pixel**2
+  # - name: g_bdFluxB
+  #   "@id": "#Object.g_bdFluxB"
+  #   datatype: double
+  #   description: Flux from the de Vaucouleur fit. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_bdFluxBErr
+  #   "@id": "#Object.g_bdFluxBErr"
+  #   datatype: double
+  #   description: Flux uncertainty from the de Vaucouleur fit. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_bdFluxD
+  #   "@id": "#Object.g_bdFluxD"
+  #   datatype: double
+  #   description: Flux from the exponential fit. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_bdFluxDErr
+  #   "@id": "#Object.g_bdFluxDErr"
+  #   datatype: double
+  #   description: Flux uncertainty from the exponential fit. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_bdReB
+  #   "@id": "#Object.g_bdReB"
+  #   datatype: double
+  #   description: Half-light ellipse of the de Vaucouleur fit. Measured on g-band.
+  #   fits:tunit: pixel**2
+  # - name: g_bdReD
+  #   "@id": "#Object.g_bdReD"
+  #   datatype: double
+  #   description: Half-light ellipse of the exponential fit. Measured on g-band.
+  #   fits:tunit: pixel**2
+  - name: X_psfFlux_Merian
     "@id": "#Object.g_free_psfFlux"
     datatype: double
     description: Flux derived from linear least-squares fit of PSF model. Measured on g-band.
     fits:tunit: nJy
-  - name: g_free_psfFluxErr
+  - name: X_psfFluxErr_Merian
     "@id": "#Object.g_free_psfFluxErr"
     datatype: double
     description: Flux uncertainty derived from linear least-squares fit of PSF model. Measured on g-band.
     fits:tunit: nJy
+  - name: X_blendedness_Merian
+    "@id": "#Object.g_blendedness"
+    datatype: double
+    description: Measure of how much the flux is affected by neighbors, (1 - child_flux/parent_flux).  Operates on the absolute value of the pixels to try to obtain a de-noised value.  See section 4.9.11 of Bosch et al. 2018, PASJ, 70, S5 for details. Measured on g-band.
+    fits:tunit:
+
+  - name: X_gaap0p7Flux
+    "@id": "#Object.g_gaap0p7Flux"
+    datatype: double
+    description: GAaP Flux with 0.7 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+  - name: X_gaap0p7FluxErr
+    "@id": "#Object.g_gaap0p7FluxErr"
+    datatype: double
+    description: GAaP Flux uncertainty with 0.7 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+
+  - name: X_gaap1p0Flux
+    "@id": "#Object.g_gaap1p0Flux"
+    datatype: double
+    description: GAaP Flux with 1.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+  - name: X_gaap1p0FluxErr
+    "@id": "#Object.g_gaap1p0FluxErr"
+    datatype: double
+    description: GAaP Flux uncertainty with 1.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+
+  - name: X_gaap1p5Flux
+    "@id": "#Object.g_gaap1p5Flux"
+    datatype: double
+    description: GAaP Flux with 1.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+  - name: X_gaap1p5FluxErr
+    "@id": "#Object.g_gaap1p5FluxErr"
+    datatype: double
+    description: GAaP Flux uncertainty with 1.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+
+  - name: X_gaap2p5Flux
+    "@id": "#Object.g_gaap2p5Flux"
+    datatype: double
+    description: GAaP Flux with 2.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+  - name: X_gaap2p5FluxErr
+    "@id": "#Object.g_gaap2p5FluxErr"
+    datatype: double
+    description: GAaP Flux uncertainty with 2.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+
+  - name: X_gaap3p0Flux
+    "@id": "#Object.g_gaap3p0Flux"
+    datatype: double
+    description: GAaP Flux with 3.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+  - name: X_gaap3p0FluxErr
+    "@id": "#Object.g_gaap3p0FluxErr"
+    datatype: double
+    description: GAaP Flux uncertainty with 3.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+
+  - name: X_gaapOptimalFlux
+    "@id": "#Object.g_gaapOptimalFlux"
+    datatype: double
+    description: GAaP Flux with optimal aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+  - name: X_gaapOptimalFluxErr
+    "@id": "#Object.g_gaapOptimalFluxErr"
+    datatype: double
+    description: GAaP Flux uncertainty with optimal aperture after multiplying the seeing by 1.15. Forced on g-band.
+    fits:tunit: nJy
+
+  - name: X_gaapFlux_flag
+    "@id": "#Object.g_gaapFlux_flag"
+    datatype: boolean
+    description: Set for any fatal failure. Forced on g-band.
+    fits:tunit:
+
+
+  # - name: g_gaapPsfFluxErr
+  #   "@id": "#Object.g_gaapPsfFluxErr"
+  #   datatype: double
+  #   description: GAaP Flux uncertainty with PSF aperture after multiplying the seeing by 1.15. Forced on g-band.
+  #   fits:tunit: nJy
+  # - name: g_gaapPsfFlux
+  #   "@id": "#Object.g_gaapPsfFlux"
+  #   datatype: double
+  #   description: GAaP Flux with PSF aperture after multiplying the seeing by 1.15. Forced on g-band.
+  #   fits:tunit: nJy
+
+  # - name: g_gaapOptimalFlux_flag_bigPsf
+  #   "@id": "#Object.g_gaapOptimalFlux_flag_bigPsf"
+  #   datatype: boolean
+  #   description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
+  #   fits:tunit:
+ 
+  # - name: g_gaap0p7Flux_flag_bigPsf
+  #   "@id": "#Object.g_gaap0p7Flux_flag_bigPsf"
+  #   datatype: boolean
+  #   description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
+  #   fits:tunit:
+
+  # - name: g_gaap1p0Flux_flag_bigPsf
+  #   "@id": "#Object.g_gaap1p0Flux_flag_bigPsf"
+  #   datatype: boolean
+  #   description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
+  #   fits:tunit:
+
+  # - name: g_gaap1p5Flux_flag_bigPsf
+  #   "@id": "#Object.g_gaap1p5Flux_flag_bigPsf"
+  #   datatype: boolean
+  #   description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
+  #   fits:tunit:
+
+  # - name: g_gaap2p5Flux_flag_bigPsf
+  #   "@id": "#Object.g_gaap2p5Flux_flag_bigPsf"
+  #   datatype: boolean
+  #   description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
+  #   fits:tunit:
+
+  # - name: g_gaap3p0Flux_flag_bigPsf
+  #   "@id": "#Object.g_gaap3p0Flux_flag_bigPsf"
+  #   datatype: boolean
+  #   description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
+  #   fits:tunit:
+
+  # - name: g_gaapFlux_flag_edge
+  #   "@id": "#Object.g_gaapFlux_flag_edge"
+  #   datatype: boolean
+  #   description: Source is too close to the edge. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_gaapFlux_flag_gaussianization
+  #   "@id": "#Object.g_gaapFlux_flag_gaussianization"
+  #   datatype: boolean
+  #   description: PSF Gaussianization failed when trying to scale by this factor. Forced on g-band.
+  #   fits:tunit:
+  # - name: X_blendedness_flag
+  #   "@id": "#Object.g_blendedness_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Measured on g-band.
+  #   fits:tunit:
+  - name: X_cModelFlux_Merian
+    "@id": "#Object.g_cModelFlux"
+    datatype: double
+    description: Flux from the final cmodel fit. Forced on g-band.
+    fits:tunit: nJy
+  - name: X_cModelFluxErr_Merian
+    "@id": "#Object.g_cModelFluxErr"
+    datatype: double
+    description: Flux uncertainty from the final cmodel fit. Forced on g-band.
+    fits:tunit: nJy
+  # - name: g_cModelFlux_inner
+  #   "@id": "#Object.g_cModelFlux_inner"
+  #   datatype: double
+  #   description: Flux within the fit region, with no extrapolation. Forced on g-band.
+  #   fits:tunit: nJy
+  - name: X_cModel_flag_Merian
+    "@id": "#Object.g_cModel_flag"
+    datatype: boolean
+    description: Flag set if the final cmodel fit (or any previous fit) failed. Forced on g-band.
+    fits:tunit:
+  # - name: g_cModel_flag_apCorr
+  #   "@id": "#Object.g_cModel_flag_apCorr"
+  #   datatype: boolean
+  #   description: Set if unable to aperture correct modelfit_CModel. Forced on g-band.
+  #   fits:tunit:
+  # - name: g_calibFlux
+  #   "@id": "#Object.g_calibFlux"
+  #   datatype: double
+  #   description: Flux within 12.0-pixel aperture. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_calibFluxErr
+  #   "@id": "#Object.g_calibFluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty within 12.0-pixel aperture. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_calibFlux_flag
+  #   "@id": "#Object.g_calibFlux_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calibFlux_flag_apertureTruncated
+  #   "@id": "#Object.g_calibFlux_flag_apertureTruncated"
+  #   datatype: boolean
+  #   description: Aperture did not fit within measurement image. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calibFlux_flag_sincCoeffsTruncated
+  #   "@id": "#Object.g_calibFlux_flag_sincCoeffsTruncated"
+  #   datatype: boolean
+  #   description: Full sinc coefficient image did not fit within measurement image. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calib_astrometry_used
+  #   "@id": "#Object.g_calib_astrometry_used"
+  #   datatype: boolean
+  #   description: Propagated from sources. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calib_photometry_reserved
+  #   "@id": "#Object.g_calib_photometry_reserved"
+  #   datatype: boolean
+  #   description: Propagated from sources. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calib_photometry_used
+  #   "@id": "#Object.g_calib_photometry_used"
+  #   datatype: boolean
+  #   description: Propagated from sources. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calib_psf_candidate
+  #   "@id": "#Object.g_calib_psf_candidate"
+  #   datatype: boolean
+  #   description: Propagated from sources. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calib_psf_reserved
+  #   "@id": "#Object.g_calib_psf_reserved"
+  #   datatype: boolean
+  #   description: Propagated from sources. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_calib_psf_used
+  #   "@id": "#Object.g_calib_psf_used"
+  #   datatype: boolean
+  #   description: Propagated from sources. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_centroid_flag
+  #   "@id": "#Object.g_centroid_flag"
+  #   datatype: boolean
+  #   description: General Failure Flag. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_centroid_x
+  #   "@id": "#Object.g_centroid_x"
+  #   datatype: double
+  #   description: Centroid from Sdss Centroid algorithm. Measured on g-band.
+  #   fits:tunit: pixel
+  # - name: g_centroid_xErr
+  #   "@id": "#Object.g_centroid_xErr"
+  #   datatype: float
+  #   description: 1-sigma uncertainty on x position. Measured on g-band.
+  #   fits:tunit: pixel
+  # - name: g_centroid_y
+  #   "@id": "#Object.g_centroid_y"
+  #   datatype: double
+  #   description: Centroid from Sdss Centroid algorithm. Measured on g-band.
+  #   fits:tunit: pixel
+  # - name: g_centroid_yErr
+  #   "@id": "#Object.g_centroid_yErr"
+  #   datatype: float
+  #   description: 1-sigma uncertainty on y position. Measured on g-band.
+  #   fits:tunit: pixel
+  # - name: g_dec
+  #   "@id": "#Object.g_dec"
+  #   datatype: double
+  #   description: Position in declination, measured on g-band.
+  #   fits:tunit: deg
+  # - name: g_decErr
+  #   "@id": "#Object.g_decErr"
+  #   datatype: float
+  #   description: Error in declination, measured on g-band.
+  #   fits:tunit: deg
+  # - name: g_decl
+  #   "@id": "#Object.g_decl"
+  #   datatype: double
+  #   description: Deprecated duplicate of g_dec.
+  #   fits:tunit: deg
+  #   ivoa:ucd: pos.eq.dec
+  - name: X_extendedness_Merian
+    "@id": "#Object.g_extendedness"
+    datatype: double
+    description: Set to 1 for extended sources, 0 for point sources. Measured on g-band.
+    fits:tunit:
+  # - name: g_extendedness_flag
+  #   "@id": "#Object.g_extendedness_flag"
+  #   datatype: boolean
+  #   description: Set to 1 for any fatal failure. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_sizeExtendedness
+  #   "@id": "#Object.g_sizeExtendedness"
+  #   datatype: double
+  #   description: Moments-based measure of an object to be a galaxy. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_sizeExtendedness_flag
+  #   "@id": "#Object.g_sizeExtendedness_flag"
+  #   datatype: boolean
+  #   description: Set to 1 for any fatal failure. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_free_cModelFlux
+  #   "@id": "#Object.g_free_cModelFlux"
+  #   datatype: double
+  #   description: Flux from the final cmodel fit. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_free_cModelFluxErr
+  #   "@id": "#Object.g_free_cModelFluxErr"
+  #   datatype: double
+  #   description: Flux uncertainty from the final cmodel fit. Measured on g-band.
+  #   fits:tunit: nJy
+  # - name: g_free_cModelFlux_flag
+  #   "@id": "#Object.g_free_cModelFlux_flag"
+  #   datatype: boolean
+  #   description: Flag set if the final cmodel fit (or any previous fit) failed. Measured on g-band.
+  #   fits:tunit:
+  # - name: g_free_cModelFlux_inner
+  #   "@id": "#Object.g_free_cModelFlux_inner"
+  #   datatype: double
+  #   description: Flux within the fit region, with no extrapolation. Measured on g-band.
+  #   fits:tunit: nJy
+
   - name: g_free_psfFlux_flag
     "@id": "#Object.g_free_psfFlux_flag"
     datatype: boolean
@@ -627,121 +754,6 @@ tables:
     datatype: double
     description: HSM moments. Measured on g-band.
     fits:tunit: pixel**2
-  - name: g_gaap0p7FluxErr
-    "@id": "#Object.g_gaap0p7FluxErr"
-    datatype: double
-    description: GAaP Flux uncertainty with 0.7 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap1p0FluxErr
-    "@id": "#Object.g_gaap1p0FluxErr"
-    datatype: double
-    description: GAaP Flux uncertainty with 1.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap1p5FluxErr
-    "@id": "#Object.g_gaap1p5FluxErr"
-    datatype: double
-    description: GAaP Flux uncertainty with 1.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap2p5FluxErr
-    "@id": "#Object.g_gaap2p5FluxErr"
-    datatype: double
-    description: GAaP Flux uncertainty with 2.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap3p0FluxErr
-    "@id": "#Object.g_gaap3p0FluxErr"
-    datatype: double
-    description: GAaP Flux uncertainty with 3.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaapOptimalFluxErr
-    "@id": "#Object.g_gaapOptimalFluxErr"
-    datatype: double
-    description: GAaP Flux uncertainty with optimal aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaapPsfFluxErr
-    "@id": "#Object.g_gaapPsfFluxErr"
-    datatype: double
-    description: GAaP Flux uncertainty with PSF aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaapPsfFlux
-    "@id": "#Object.g_gaapPsfFlux"
-    datatype: double
-    description: GAaP Flux with PSF aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaapOptimalFlux
-    "@id": "#Object.g_gaapOptimalFlux"
-    datatype: double
-    description: GAaP Flux with optimal aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaapOptimalFlux_flag_bigPsf
-    "@id": "#Object.g_gaapOptimalFlux_flag_bigPsf"
-    datatype: boolean
-    description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
-    fits:tunit:
-  - name: g_gaap0p7Flux
-    "@id": "#Object.g_gaap0p7Flux"
-    datatype: double
-    description: GAaP Flux with 0.7 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap0p7Flux_flag_bigPsf
-    "@id": "#Object.g_gaap0p7Flux_flag_bigPsf"
-    datatype: boolean
-    description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
-    fits:tunit:
-  - name: g_gaap1p0Flux
-    "@id": "#Object.g_gaap1p0Flux"
-    datatype: double
-    description: GAaP Flux with 1.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap1p0Flux_flag_bigPsf
-    "@id": "#Object.g_gaap1p0Flux_flag_bigPsf"
-    datatype: boolean
-    description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
-    fits:tunit:
-  - name: g_gaap1p5Flux
-    "@id": "#Object.g_gaap1p5Flux"
-    datatype: double
-    description: GAaP Flux with 1.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap1p5Flux_flag_bigPsf
-    "@id": "#Object.g_gaap1p5Flux_flag_bigPsf"
-    datatype: boolean
-    description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
-    fits:tunit:
-  - name: g_gaap2p5Flux
-    "@id": "#Object.g_gaap2p5Flux"
-    datatype: double
-    description: GAaP Flux with 2.5 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap2p5Flux_flag_bigPsf
-    "@id": "#Object.g_gaap2p5Flux_flag_bigPsf"
-    datatype: boolean
-    description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
-    fits:tunit:
-  - name: g_gaap3p0Flux
-    "@id": "#Object.g_gaap3p0Flux"
-    datatype: double
-    description: GAaP Flux with 3.0 aperture after multiplying the seeing by 1.15. Forced on g-band.
-    fits:tunit: nJy
-  - name: g_gaap3p0Flux_flag_bigPsf
-    "@id": "#Object.g_gaap3p0Flux_flag_bigPsf"
-    datatype: boolean
-    description: The Gaussianized PSF is bigger than the aperture. Forced on g-band.
-    fits:tunit:
-  - name: g_gaapFlux_flag
-    "@id": "#Object.g_gaapFlux_flag"
-    datatype: boolean
-    description: Set for any fatal failure. Forced on g-band.
-    fits:tunit:
-  - name: g_gaapFlux_flag_edge
-    "@id": "#Object.g_gaapFlux_flag_edge"
-    datatype: boolean
-    description: Source is too close to the edge. Forced on g-band.
-    fits:tunit:
-  - name: g_gaapFlux_flag_gaussianization
-    "@id": "#Object.g_gaapFlux_flag_gaussianization"
-    datatype: boolean
-    description: PSF Gaussianization failed when trying to scale by this factor. Forced on g-band.
-    fits:tunit:
   - name: g_hsmShapeRegauss_e1
     "@id": "#Object.g_hsmShapeRegauss_e1"
     datatype: double
@@ -5021,1166 +5033,3 @@ tables:
     datatype: boolean
     description: True when there was no flux attributed to this object after flux redistribution in the deblender.
     fits:tunit:
-
-- name: Source
-  "@id": "#Source"
-  description: Table to store high signal-to-noise sources;. A source is
-    a measurement of Object's properties from a single image that contains its footprint
-    on the sky.
-  columns:
-  - name: sourceId
-    "@id": "#Source.sourceId"
-    datatype: long
-    nullable: false
-    description: Unique id. Unique Source ID. Primary Key.
-    ivoa:ucd: meta.id;src
-  - name: coord_ra
-    "@id": "#Source.coord_ra"
-    datatype: double
-    description: Fiducial ICRS Right Ascension of centroid used for database indexing
-    fits:tunit: deg
-  - name: coord_dec
-    "@id": "#Source.coord_dec"
-    datatype: double
-    description: Fiducial ICRS Declination of centroid used for database indexing
-    fits:tunit: deg
-  - name: visit
-    "@id": "#Source.visit"
-    datatype: long
-    nullable: false
-    description: Id of the visit where this source was measured.
-    ivoa:ucd: meta.id;obs.image
-  - name: detector
-    "@id": "#Source.detector"
-    datatype: short
-    nullable: false
-    description: Id of the detector where this source was measured.
-      Datatype short instead of byte because of DB concerns about unsigned bytes.
-    ivoa:ucd: meta.id;obs.image
-  - name: parentSourceId
-    "@id": "#Source.parentSourceId"
-    datatype: long
-    description: Unique ID of parent source
-    fits:tunit:
-  - name: x
-    "@id": "#Source.x"
-    datatype: double
-    description: Centroid from Sdss Centroid algorithm
-    fits:tunit: pixel
-  - name: y
-    "@id": "#Source.y"
-    datatype: double
-    description: Centroid from Sdss Centroid algorithm
-    fits:tunit: pixel
-  - name: xErr
-    "@id": "#Source.xErr"
-    datatype: float
-    description: 1-sigma uncertainty on x position
-    fits:tunit: pixel
-  - name: yErr
-    "@id": "#Source.yErr"
-    datatype: float
-    description: 1-sigma uncertainty on y position
-    fits:tunit: pixel
-  - name: ra
-    "@id": "#Source.ra"
-    datatype: double
-    description: Position in right ascension.
-    fits:tunit: deg
-  - name: dec
-    "@id": "#Source.dec"
-    datatype: double
-    description: Position in declination.
-    fits:tunit: deg
-  - name: decl
-    "@id": "#Source.decl"
-    datatype: double
-    description: Deprecated duplicate of dec.
-    fits:tunit: deg
-  - name: raErr
-    "@id": "#Source.raErr"
-    datatype: float
-    description: Error in right ascension.
-    fits:tunit: deg
-  - name: decErr
-    "@id": "#Source.decErr"
-    datatype: float
-    description: Error in declination.
-    fits:tunit: deg
-  - name: ra_dec_Cov
-    "@id": "#Source.ra_dec_Cov"
-    datatype: float
-    description: Covariance between right ascension and declination.
-    fits:tunit: deg**2
-  - name: calibFlux
-    "@id": "#Source.calibFlux"
-    datatype: double
-    description: Flux within 12.0-pixel aperture
-    fits:tunit: nJy
-  - name: calibFluxErr
-    "@id": "#Source.calibFluxErr"
-    datatype: double
-    description: Flux uncertainty within 12.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap03Flux
-    "@id": "#Source.ap03Flux"
-    datatype: double
-    description: Flux within 3.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap03FluxErr
-    "@id": "#Source.ap03FluxErr"
-    datatype: double
-    description: Flux uncertainty within 3.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap03Flux_flag
-    "@id": "#Source.ap03Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap06Flux
-    "@id": "#Source.ap06Flux"
-    datatype: double
-    description: Flux within 6.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap06FluxErr
-    "@id": "#Source.ap06FluxErr"
-    datatype: double
-    description: Flux uncertainty within 6.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap06Flux_flag
-    "@id": "#Source.ap06Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap09Flux
-    "@id": "#Source.ap09Flux"
-    datatype: double
-    description: Flux within 9.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap09FluxErr
-    "@id": "#Source.ap09FluxErr"
-    datatype: double
-    description: Flux uncertainty within 9.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap09Flux_flag
-    "@id": "#Source.ap09Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap12Flux
-    "@id": "#Source.ap12Flux"
-    datatype: double
-    description: Flux within 12.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap12FluxErr
-    "@id": "#Source.ap12FluxErr"
-    datatype: double
-    description: Flux uncertainty within 12.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap12Flux_flag
-    "@id": "#Source.ap12Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap17Flux
-    "@id": "#Source.ap17Flux"
-    datatype: double
-    description: Flux within 17.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap17FluxErr
-    "@id": "#Source.ap17FluxErr"
-    datatype: double
-    description: Flux uncertainty within 17.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap17Flux_flag
-    "@id": "#Source.ap17Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap25Flux
-    "@id": "#Source.ap25Flux"
-    datatype: double
-    description: Flux within 25.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap25FluxErr
-    "@id": "#Source.ap25FluxErr"
-    datatype: double
-    description: Flux uncertainty within 25.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap25Flux_flag
-    "@id": "#Source.ap25Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap35Flux
-    "@id": "#Source.ap35Flux"
-    datatype: double
-    description: Flux within 35.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap35FluxErr
-    "@id": "#Source.ap35FluxErr"
-    datatype: double
-    description: Flux uncertainty within 35.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap35Flux_flag
-    "@id": "#Source.ap35Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap50Flux
-    "@id": "#Source.ap50Flux"
-    datatype: double
-    description: Flux within 50.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap50FluxErr
-    "@id": "#Source.ap50FluxErr"
-    datatype: double
-    description: Flux uncertainty within 50.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap50Flux_flag
-    "@id": "#Source.ap50Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: ap70Flux
-    "@id": "#Source.ap70Flux"
-    datatype: double
-    description: Flux within 70.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap70FluxErr
-    "@id": "#Source.ap70FluxErr"
-    datatype: double
-    description: Flux uncertainty within 70.0-pixel aperture
-    fits:tunit: nJy
-  - name: ap70Flux_flag
-    "@id": "#Source.ap70Flux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: sky
-    "@id": "#Source.sky"
-    datatype: double
-    description: Background in annulus around source
-    fits:tunit: nJy
-  - name: skyErr
-    "@id": "#Source.skyErr"
-    datatype: double
-    description: Background in annulus around source
-    fits:tunit: nJy
-  - name: psfFlux
-    "@id": "#Source.psfFlux"
-    datatype: double
-    description: Flux derived from linear least-squares fit of psf model forced on the calexp
-    fits:tunit: nJy
-  - name: psfFluxErr
-    "@id": "#Source.psfFluxErr"
-    datatype: double
-    description: Uncertainty on the flux derived from linear least-squares fit of psf model forced on the calexp
-    fits:tunit: nJy
-  - name: ixx
-    "@id": "#Source.ixx"
-    datatype: double
-    description: HSM moments
-    fits:tunit: pixel**2
-  - name: iyy
-    "@id": "#Source.iyy"
-    datatype: double
-    description: HSM moments
-    fits:tunit: pixel**2
-  - name: ixy
-    "@id": "#Source.ixy"
-    datatype: double
-    description: HSM moments
-    fits:tunit: pixel**2
-  - name: ixxPSF
-    "@id": "#Source.ixxPSF"
-    datatype: double
-    description: HSM moments
-    fits:tunit: pixel**2
-  - name: iyyPSF
-    "@id": "#Source.iyyPSF"
-    datatype: double
-    description: HSM moments
-    fits:tunit: pixel**2
-  - name: ixyPSF
-    "@id": "#Source.ixyPSF"
-    datatype: double
-    description: HSM moments
-    fits:tunit: pixel**2
-  - name: ixxDebiasedPSF
-    "@id": "#Source.ixxDebiasedPSF"
-    datatype: double
-    description: HSM moments
-    fits:tunit:
-  - name: iyyDebiasedPSF
-    "@id": "#Source.iyyDebiasedPSF"
-    datatype: double
-    description: HSM moments
-    fits:tunit:
-  - name: ixyDebiasedPSF
-    "@id": "#Source.ixyDebiasedPSF"
-    datatype: double
-    description: HSM moments
-    fits:tunit:
-  - name: gaussianFlux
-    "@id": "#Source.gaussianFlux"
-    datatype: double
-    description: Flux from Gaussian Flux algorithm
-    fits:tunit: nJy
-  - name: gaussianFluxErr
-    "@id": "#Source.gaussianFluxErr"
-    datatype: double
-    description: Flux uncertainty from Gaussian Flux algorithm
-    fits:tunit: nJy
-  - name: extendedness
-    "@id": "#Source.extendedness"
-    datatype: double
-    description: Set to 1 for extended sources, 0 for point sources.
-    fits:tunit:
-  - name: sizeExtendedness
-    "@id": "#Source.sizeExtendedness"
-    datatype: double
-    description: Moments-based measure of a source to be a galaxy.
-    fits:tunit:
-  - name: localPhotoCalib
-    "@id": "#Source.localPhotoCalib"
-    datatype: double
-    description: Local approximation of the PhotoCalib calibration factor at the location of the src.
-    fits:tunit:
-  - name: localPhotoCalib_flag
-    "@id": "#Source.localPhotoCalib_flag"
-    datatype: boolean
-    description: Set for any fatal failure
-    fits:tunit:
-  - name: localPhotoCalibErr
-    "@id": "#Source.localPhotoCalibErr"
-    datatype: double
-    description: Error on the local approximation of the PhotoCalib calibration factor at the location of the src.
-    fits:tunit:
-  - name: localWcs_flag
-    "@id": "#Source.localWcs_flag"
-    datatype: boolean
-    description: Set for any fatal failure
-    fits:tunit:
-  - name: localWcs_CDMatrix_2_1
-    "@id": "#Source.localWcs_CDMatrix_2_1"
-    datatype: double
-    description: (2, 1) element of the CDMatrix for the linear approximation of the WCS at the src location. Gives units in radians.
-    fits:tunit:
-  - name: localWcs_CDMatrix_1_1
-    "@id": "#Source.localWcs_CDMatrix_1_1"
-    datatype: double
-    description: (1, 1) element of the CDMatrix for the linear approximation of the WCS at the src location. Gives units in radians.
-    fits:tunit:
-  - name: localWcs_CDMatrix_1_2
-    "@id": "#Source.localWcs_CDMatrix_1_2"
-    datatype: double
-    description: (1, 2) element of the CDMatrix for the linear approximation of the WCS at the src location. Gives units in radians.
-    fits:tunit:
-  - name: localWcs_CDMatrix_2_2
-    "@id": "#Source.localWcs_CDMatrix_2_2"
-    datatype: double
-    description: (2, 2) element of the CDMatrix for the linear approximation of the WCS at the src location. Gives units in radians.
-    fits:tunit:
-  - name: blendedness_abs
-    "@id": "#Source.blendedness_abs"
-    datatype: double
-    description: Measure of how much the flux is affected by neighbors, (1 - child_flux/parent_flux).  Operates on the absolute value of the pixels to try to obtain a de-noised value.  See section 4.9.11 of Bosch et al. 2018, PASJ, 70, S5 for details.
-    fits:tunit:
-  - name: blendedness_flag
-    "@id": "#Source.blendedness_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: blendedness_flag_noCentroid
-    "@id": "#Source.blendedness_flag_noCentroid"
-    datatype: boolean
-    description: Object has no centroid
-    fits:tunit:
-  - name: blendedness_flag_noShape
-    "@id": "#Source.blendedness_flag_noShape"
-    datatype: boolean
-    description: Object has no shape
-    fits:tunit:
-  - name: apFlux_12_0_flag
-    "@id": "#Source.apFlux_12_0_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: apFlux_12_0_flag_apertureTruncated
-    "@id": "#Source.apFlux_12_0_flag_apertureTruncated"
-    datatype: boolean
-    description: Aperture did not fit within measurement image
-    fits:tunit:
-  - name: apFlux_12_0_flag_sincCoeffsTruncated
-    "@id": "#Source.apFlux_12_0_flag_sincCoeffsTruncated"
-    datatype: boolean
-    description: Full sinc coefficient image did not fit within measurement image
-    fits:tunit:
-  - name: apFlux_12_0_instFlux
-    "@id": "#Source.apFlux_12_0_instFlux"
-    datatype: double
-    description: Flux within 12.0-pixel aperture
-    fits:tunit: count
-  - name: apFlux_12_0_instFluxErr
-    "@id": "#Source.apFlux_12_0_instFluxErr"
-    datatype: double
-    description: 1-sigma flux uncertainty
-    fits:tunit: count
-  - name: apFlux_17_0_flag
-    "@id": "#Source.apFlux_17_0_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: apFlux_17_0_instFlux
-    "@id": "#Source.apFlux_17_0_instFlux"
-    datatype: double
-    description: Flux within 17.0-pixel aperture
-    fits:tunit: count
-  - name: apFlux_17_0_instFluxErr
-    "@id": "#Source.apFlux_17_0_instFluxErr"
-    datatype: double
-    description: 1-sigma flux uncertainty
-    fits:tunit: count
-  - name: apFlux_35_0_flag
-    "@id": "#Source.apFlux_35_0_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: apFlux_35_0_instFlux
-    "@id": "#Source.apFlux_35_0_instFlux"
-    datatype: double
-    description: Flux within 35.0-pixel aperture
-    fits:tunit: count
-  - name: apFlux_35_0_instFluxErr
-    "@id": "#Source.apFlux_35_0_instFluxErr"
-    datatype: double
-    description: 1-sigma flux uncertainty
-    fits:tunit: count
-  - name: apFlux_50_0_flag
-    "@id": "#Source.apFlux_50_0_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: apFlux_50_0_instFlux
-    "@id": "#Source.apFlux_50_0_instFlux"
-    datatype: double
-    description: Flux within 50.0-pixel aperture
-    fits:tunit: count
-  - name: apFlux_50_0_instFluxErr
-    "@id": "#Source.apFlux_50_0_instFluxErr"
-    datatype: double
-    description: 1-sigma flux uncertainty
-    fits:tunit: count
-  - name: extendedness_flag
-    "@id": "#Source.extendedness_flag"
-    datatype: boolean
-    description: Set to 1 for any fatal failure.
-    fits:tunit:
-  - name: sizeExtendedness_flag
-    "@id": "#Source.sizeExtendedness_flag"
-    datatype: boolean
-    description: Set to 1 for any fatal failure.
-    fits:tunit:
-  - name: footprintArea_value
-    "@id": "#Source.footprintArea_value"
-    datatype: int
-    description: Number of pixels in the sources detection footprint.
-    fits:tunit: pixel
-  - name: jacobian_flag
-    "@id": "#Source.jacobian_flag"
-    datatype: boolean
-    description: Set to 1 for any fatal failure
-    fits:tunit:
-  - name: jacobian_value
-    "@id": "#Source.jacobian_value"
-    datatype: double
-    description: Jacobian correction
-    fits:tunit:
-  - name: localBackground_instFlux
-    "@id": "#Source.localBackground_instFlux"
-    datatype: double
-    description: Background in annulus around source
-    fits:tunit: count
-  - name: localBackground_instFluxErr
-    "@id": "#Source.localBackground_instFluxErr"
-    datatype: double
-    description: 1-sigma flux uncertainty
-    fits:tunit: count
-  - name: localBackground_flag
-    "@id": "#Source.localBackground_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: localBackground_flag_noGoodPixels
-    "@id": "#Source.localBackground_flag_noGoodPixels"
-    datatype: boolean
-    description: No good pixels in the annulus
-    fits:tunit:
-  - name: localBackground_flag_noPsf
-    "@id": "#Source.localBackground_flag_noPsf"
-    datatype: boolean
-    description: No PSF provided
-    fits:tunit:
-  - name: pixelFlags_bad
-    "@id": "#Source.pixelFlags_bad"
-    datatype: boolean
-    description: Bad pixel in the Source footprint
-    fits:tunit:
-  - name: pixelFlags_cr
-    "@id": "#Source.pixelFlags_cr"
-    datatype: boolean
-    description: Cosmic ray in the Source footprint
-    fits:tunit:
-  - name: pixelFlags_crCenter
-    "@id": "#Source.pixelFlags_crCenter"
-    datatype: boolean
-    description: Cosmic ray in the Source center
-    fits:tunit:
-  - name: pixelFlags_edge
-    "@id": "#Source.pixelFlags_edge"
-    datatype: boolean
-    description: Source is outside usable exposure region (masked EDGE or NO_DATA)
-    fits:tunit:
-  - name: pixelFlags_interpolated
-    "@id": "#Source.pixelFlags_interpolated"
-    datatype: boolean
-    description: Interpolated pixel in the Source footprint
-    fits:tunit:
-  - name: pixelFlags_interpolatedCenter
-    "@id": "#Source.pixelFlags_interpolatedCenter"
-    datatype: boolean
-    description: Interpolated pixel in the Source center
-    fits:tunit:
-  - name: pixelFlags_offimage
-    "@id": "#Source.pixelFlags_offimage"
-    datatype: boolean
-    description: Source center is off image
-    fits:tunit:
-  - name: pixelFlags_saturated
-    "@id": "#Source.pixelFlags_saturated"
-    datatype: boolean
-    description: Saturated pixel in the Source footprint
-    fits:tunit:
-  - name: pixelFlags_saturatedCenter
-    "@id": "#Source.pixelFlags_saturatedCenter"
-    datatype: boolean
-    description: Saturated pixel in the Source center
-    fits:tunit:
-  - name: pixelFlags_suspect
-    "@id": "#Source.pixelFlags_suspect"
-    datatype: boolean
-    description: Sources footprint includes suspect pixels
-    fits:tunit:
-  - name: pixelFlags_suspectCenter
-    "@id": "#Source.pixelFlags_suspectCenter"
-    datatype: boolean
-    description: Sources center is close to suspect pixels
-    fits:tunit:
-  - name: pixelFlags_streak
-    "@id": "#Source.pixelFlags_streak"
-    datatype: boolean
-    description: Streak in the Source footprint.
-    fits:tunit:
-  - name: pixelFlags_streakCenter
-    "@id": "#Source.pixelFlags_streakCenter"
-    datatype: boolean
-    description: Streak in the Source center.
-    fits:tunit:
-  - name: invalidPsfFlag
-    "@id": "#Source.invalidPsfFlag"
-    datatype: boolean
-    description: Source has an invalid psf.
-    fits:tunit:
-  - name: psfFlux_apCorr
-    "@id": "#Source.psfFlux_apCorr"
-    datatype: double
-    description: Aperture correction applied to base_PsfFlux
-    fits:tunit:
-  - name: psfFlux_apCorrErr
-    "@id": "#Source.psfFlux_apCorrErr"
-    datatype: double
-    description: Standard deviation of aperture correction applied to base_PsfFlux
-    fits:tunit:
-  - name: psfFlux_area
-    "@id": "#Source.psfFlux_area"
-    datatype: float
-    description: Effective area of PSF
-    fits:tunit: pixel
-  - name: psfFlux_flag
-    "@id": "#Source.psfFlux_flag"
-    datatype: boolean
-    description: Failure to derive linear least-squares fit of psf model forced on the calexp
-    fits:tunit:
-  - name: psfFlux_flag_apCorr
-    "@id": "#Source.psfFlux_flag_apCorr"
-    datatype: boolean
-    description: Set if unable to aperture correct base_PsfFlux
-    fits:tunit:
-  - name: psfFlux_flag_edge
-    "@id": "#Source.psfFlux_flag_edge"
-    datatype: boolean
-    description: Object was too close to the edge of the image to use the full PSF model
-    fits:tunit:
-  - name: psfFlux_flag_noGoodPixels
-    "@id": "#Source.psfFlux_flag_noGoodPixels"
-    datatype: boolean
-    description: Not enough non-rejected pixels in data to attempt the fit
-    fits:tunit:
-  - name: gaussianFlux_flag
-    "@id": "#Source.gaussianFlux_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: centroid_flag
-    "@id": "#Source.centroid_flag"
-    datatype: boolean
-    description: General Failure Flag
-    fits:tunit:
-  - name: centroid_flag_almostNoSecondDerivative
-    "@id": "#Source.centroid_flag_almostNoSecondDerivative"
-    datatype: boolean
-    description: Almost vanishing second derivative
-    fits:tunit:
-  - name: centroid_flag_badError
-    "@id": "#Source.centroid_flag_badError"
-    datatype: boolean
-    description: Error on x and/or y position is NaN
-    fits:tunit:
-  - name: centroid_flag_edge
-    "@id": "#Source.centroid_flag_edge"
-    datatype: boolean
-    description: Object too close to edge
-    fits:tunit:
-  - name: centroid_flag_noSecondDerivative
-    "@id": "#Source.centroid_flag_noSecondDerivative"
-    datatype: boolean
-    description: Vanishing second derivative
-    fits:tunit:
-  - name: centroid_flag_notAtMaximum
-    "@id": "#Source.centroid_flag_notAtMaximum"
-    datatype: boolean
-    description: Object is not at a maximum
-    fits:tunit:
-  - name: centroid_flag_resetToPeak
-    "@id": "#Source.centroid_flag_resetToPeak"
-    datatype: boolean
-    description: Set if CentroidChecker reset the centroid
-    fits:tunit:
-  - name: variance_flag
-    "@id": "#Source.variance_flag"
-    datatype: boolean
-    description: Set for any fatal failure
-    fits:tunit:
-  - name: variance_flag_emptyFootprint
-    "@id": "#Source.variance_flag_emptyFootprint"
-    datatype: boolean
-    description: Set to True when the footprint has no usable pixels
-    fits:tunit:
-  - name: variance_value
-    "@id": "#Source.variance_value"
-    datatype: double
-    description: Variance at object position
-    fits:tunit:
-  - name: calib_astrometry_used
-    "@id": "#Source.calib_astrometry_used"
-    datatype: boolean
-    description: Set if source was used in astrometric calibration
-    fits:tunit:
-  - name: calib_detected
-    "@id": "#Source.calib_detected"
-    datatype: boolean
-    description: Source was detected as an icSource
-    fits:tunit:
-  - name: calib_photometry_reserved
-    "@id": "#Source.calib_photometry_reserved"
-    datatype: boolean
-    description: Set if source was reserved from photometric calibration
-    fits:tunit:
-  - name: calib_photometry_used
-    "@id": "#Source.calib_photometry_used"
-    datatype: boolean
-    description: Set if source was used in photometric calibration
-    fits:tunit:
-  - name: calib_psf_candidate
-    "@id": "#Source.calib_psf_candidate"
-    datatype: boolean
-    description: Flag set if the source was a candidate for PSF determination, as determined by the star selector.
-    fits:tunit:
-  - name: calib_psf_reserved
-    "@id": "#Source.calib_psf_reserved"
-    datatype: boolean
-    description: Set if source was reserved from PSF determination
-    fits:tunit:
-  - name: calib_psf_used
-    "@id": "#Source.calib_psf_used"
-    datatype: boolean
-    description: Flag set if the source was actually used for PSF determination, as determined by the
-    fits:tunit:
-  - name: deblend_deblendedAsPsf
-    "@id": "#Source.deblend_deblendedAsPsf"
-    datatype: boolean
-    description: Deblender thought this source looked like a PSF
-    fits:tunit:
-  - name: deblend_hasStrayFlux
-    "@id": "#Source.deblend_hasStrayFlux"
-    datatype: boolean
-    description: This source was assigned some stray flux
-    fits:tunit:
-  - name: deblend_masked
-    "@id": "#Source.deblend_masked"
-    datatype: boolean
-    description: Parent footprint was predominantly masked
-    fits:tunit:
-  - name: deblend_nChild
-    "@id": "#Source.deblend_nChild"
-    datatype: int
-    description: Number of children this object has (defaults to 0)
-    fits:tunit:
-  - name: deblend_parentTooBig
-    "@id": "#Source.deblend_parentTooBig"
-    datatype: boolean
-    description: Parent footprint covered too many pixels
-    fits:tunit:
-  - name: deblend_patchedTemplate
-    "@id": "#Source.deblend_patchedTemplate"
-    datatype: boolean
-    description: This source was near an image edge and the deblender used patched edge-handling.
-    fits:tunit:
-  - name: deblend_rampedTemplate
-    "@id": "#Source.deblend_rampedTemplate"
-    datatype: boolean
-    description: This source was near an image edge and the deblender used ramp edge-handling.
-    fits:tunit:
-  - name: deblend_skipped
-    "@id": "#Source.deblend_skipped"
-    datatype: boolean
-    description: Deblender skipped this source
-    fits:tunit:
-  - name: deblend_tooManyPeaks
-    "@id": "#Source.deblend_tooManyPeaks"
-    datatype: boolean
-    description: Source had too many peaks; only the brightest were included
-    fits:tunit:
-  - name: hsmPsfMoments_flag
-    "@id": "#Source.hsmPsfMoments_flag"
-    datatype: boolean
-    description: General failure flag, set if anything went wrong
-    fits:tunit:
-  - name: hsmPsfMoments_flag_no_pixels
-    "@id": "#Source.hsmPsfMoments_flag_no_pixels"
-    datatype: boolean
-    description: No pixels to measure
-    fits:tunit:
-  - name: hsmPsfMoments_flag_not_contained
-    "@id": "#Source.hsmPsfMoments_flag_not_contained"
-    datatype: boolean
-    description: Center not contained in footprint bounding box
-    fits:tunit:
-  - name: hsmPsfMoments_flag_parent_source
-    "@id": "#Source.hsmPsfMoments_flag_parent_source"
-    datatype: boolean
-    description: Parent source, ignored
-    fits:tunit:
-  - name: iDebiasedPSF_flag
-    "@id": "#Source.iDebiasedPSF_flag"
-    datatype: boolean
-    description: General failure flag, set if anything went wrong
-    fits:tunit:
-  - name: iDebiasedPSF_flag_no_pixels
-    "@id": "#Source.iDebiasedPSF_flag_no_pixels"
-    datatype: boolean
-    description: No pixels to measure
-    fits:tunit:
-  - name: iDebiasedPSF_flag_not_contained
-    "@id": "#Source.iDebiasedPSF_flag_not_contained"
-    datatype: boolean
-    description: Center not contained in footprint bounding box
-    fits:tunit:
-  - name: iDebiasedPSF_flag_parent_source
-    "@id": "#Source.iDebiasedPSF_flag_parent_source"
-    datatype: boolean
-    description: Parent source, ignored
-    fits:tunit:
-  - name: iDebiasedPSF_flag_galsim
-    "@id": "#Source.iDebiasedPSF_flag_galsim"
-    datatype: boolean
-    description: GalSim failure
-    fits:tunit:
-  - name: iDebiasedPSF_flag_edge
-    "@id": "#Source.iDebiasedPSF_flag_edge"
-    datatype: boolean
-    description: Variance undefined outside image edge
-    fits:tunit:
-  - name: hsmShapeRegauss_flag
-    "@id": "#Source.hsmShapeRegauss_flag"
-    datatype: boolean
-    description: General failure flag, set if anything went wrong
-    fits:tunit:
-  - name: hsmShapeRegauss_flag_galsim
-    "@id": "#Source.hsmShapeRegauss_flag_galsim"
-    datatype: boolean
-    description: GalSim failure
-    fits:tunit:
-  - name: hsmShapeRegauss_flag_no_pixels
-    "@id": "#Source.hsmShapeRegauss_flag_no_pixels"
-    datatype: boolean
-    description: No pixels to measure
-    fits:tunit:
-  - name: hsmShapeRegauss_flag_not_contained
-    "@id": "#Source.hsmShapeRegauss_flag_not_contained"
-    datatype: boolean
-    description: Center not contained in footprint bounding box
-    fits:tunit:
-  - name: hsmShapeRegauss_flag_parent_source
-    "@id": "#Source.hsmShapeRegauss_flag_parent_source"
-    datatype: boolean
-    description: Parent source, ignored
-    fits:tunit:
-  - name: sky_source
-    "@id": "#Source.sky_source"
-    datatype: boolean
-    description: Sky objects.
-    fits:tunit:
-  - name: detect_isPrimary
-    "@id": "#Source.detect_isPrimary"
-    datatype: boolean
-    description: True if Object seed has no children and is in the inner region of a coadd patch and is in the inner region of a coadd tract and is not a sky object
-    fits:tunit:
-  - name: band
-    "@id": "#Source.band"
-    datatype: char
-    length: 1
-    description: Name of the band used to take the exposure where this source was measured. Abstract filter that is not associated with a particular instrument
-    fits:tunit:
-  - name: physical_filter
-    "@id": "#Source.physical_filter"
-    datatype: char
-    description: ID of physical filter, the filter associated with a particular instrument.
-    length: 5
-    fits:tunit:
-- name: Visit
-  '@id': '#Visit'
-  description: Defines a single Visit.
-  columns:
-  - name: visit
-    '@id': '#Visit.visit'
-    datatype: long
-    description: Unique identifier.
-    ivoa:ucd: meta.id;obs.image
-  - name: physical_filter
-    '@id': '#Visit.physical_filter'
-    datatype: char
-    length: 32
-    description: ID of physical filter, the filter associated with a particular instrument.
-    votable:arraysize: "*"
-    fits:tunit:
-  - name: band
-    '@id': '#Visit.band'
-    datatype: char
-    length: 1
-    description: Name of the band used to take the visit where this source was measured.
-      Abstract filter that is not associated with a particular instrument.
-    votable:arraysize: "*"
-    fits:tunit:
-  - name: ra
-    '@id': '#Visit.ra'
-    datatype: double
-    description: RA of focal plane center.
-    fits:tunit: deg
-  - name: dec
-    '@id': '#Visit.dec'
-    datatype: double
-    description: Declination of focal plane center
-    fits:tunit: deg
-  - name: decl
-    '@id': '#Visit.decl'
-    datatype: double
-    description: Deprecated duplicate of dec.
-    fits:tunit: deg
-  - name: skyRotation
-    '@id': '#Visit.skyRotation'
-    datatype: double
-    description: Sky rotation angle.
-    fits:tunit: deg
-  - name: azimuth
-    '@id': '#Visit.azimuth'
-    datatype: double
-    description: Azimuth of focal plane center at the middle of the visit.
-    fits:tunit: deg
-  - name: altitude
-    '@id': '#Visit.altitude'
-    datatype: double
-    description: Altitude of focal plane center at the middle of the visit.
-    fits:tunit: deg
-  - name: zenithDistance
-    '@id': '#Visit.zenithDistance'
-    datatype: double
-    description: Zenith distance at the middle of the visit.
-    fits:tunit: deg
-  - name: airmass
-    '@id': '#Visit.airmass'
-    datatype: double
-    description: Airmass of the observed line of sight.
-    fits:tunit:
-  - name: expTime
-    '@id': '#Visit.expTime'
-    datatype: double
-    description: Spatially-averaged duration of visit, accurate to 10ms.
-    fits:tunit: s
-  - name: midpoint
-    '@id': '#Visit.midpoint'
-    datatype: timestamp
-    mysql:datatype: DATETIME(6)
-    description: Midpoint time of the visit at the fiducial center of the focal plane array.
-      TAI, accurate to 10ms.
-    fits:tunit:
-  - name: midpointMjdTai
-    '@id': '#Visit.midpointMjdTai'
-    datatype: double
-    description: Midpoint time of the visit at the fiducial center of the focal plane array,
-      expressed as Modified Julian Date, International Atomic Time, accurate to 10ms.
-    fits:tunit: d
-  - name: obsStart
-    '@id': '#Visit.obsStart'
-    datatype: timestamp
-    mysql:datatype: DATETIME(6)
-    description: Start time of the visit at the fiducial center of the focal plane array,
-      TAI, accurate to 10ms.
-  - name: obsStartMjdTai
-    '@id': '#Visit.obsStartMjdTai'
-    datatype: double
-    description: Start of the visit, expressed as Modified
-      Julian Date, International Atomic Time, accurate to 10ms.
-- name: CcdVisit
-  '@id': '#CcdVisit'
-  description: Defines a single detector of a visit
-  columns:
-  - name: ccdVisitId
-    '@id': '#CcdVisit.ccdVisitId'
-    datatype: long
-    description: Primary key (unique identifier).
-  - name: visitId
-    '@id': '#CcdVisit.visitId'
-    datatype: long
-    description: Reference to the corresponding entry in the Visit table.
-  - name: physical_filter
-    '@id': '#CcdVisit.physical_filter'
-    datatype: char
-    length: 32
-    description: ID of physical filter, the filter associated with a particular instrument.
-    votable:arraysize: "*"
-    fits:tunit:
-  - name: band
-    '@id': '#CcdVisit.band'
-    datatype: char
-    length: 1
-    description: Name of the band used to take the visit where this source was measured.
-      Abstract filter that is not associated with a particular instrument.
-    votable:arraysize: "*"
-    fits:tunit:
-  - name: ra
-    '@id': '#CcdVisit.ra'
-    datatype: double
-    description: RA of Ccd center.
-    fits:tunit: deg
-  - name: dec
-    '@id': '#CcdVisit.dec'
-    datatype: double
-    description: Declination of Ccd center.
-    fits:tunit: deg
-  - name: decl
-    '@id': '#CcdVisit.decl'
-    datatype: double
-    description: Deprecated duplicate of dec.
-    fits:tunit: deg
-  - name: zenithDistance
-    '@id': '#CcdVisit.zenithDistance'
-    datatype: float
-    description: Zenith distance at observation mid-point.
-    fits:tunit: deg
-  - name: zeroPoint
-    '@id': '#CcdVisit.zeroPoint'
-    datatype: float
-    description: Zero-point for the Ccd, estimated at Ccd center.
-    fits:tunit: mag
-  - name: psfSigma
-    '@id': '#CcdVisit.psfSigma'
-    datatype: float
-    description: PSF model second-moments determinant radius (center of chip)
-    fits:tunit: pixel
-  - name: skyBg
-    '@id': '#CcdVisit.skyBg'
-    datatype: float
-    description: Average sky background.
-    fits:tunit: adu
-  - name: skyNoise
-    '@id': '#CcdVisit.skyNoise'
-    datatype: float
-    description: RMS noise of the sky background.
-    fits:tunit: adu
-  - name: detector
-    '@id': '#CcdVisit.detector'
-    datatype: long
-    description: Detector ID. A detector associated with a particular instrument (not an observation of that detector)
-  - name: seeing
-    '@id': '#CcdVisit.seeing'
-    datatype: double
-    description: Mean measured FWHM of the PSF.
-    fits:tunit: arcsec
-  - name: skyRotation
-    '@id': '#CcdVisit.skyRotation'
-    datatype: double
-    description: Sky rotation angle.
-    fits:tunit: deg
-  - name: midpoint
-    '@id': '#CcdVisit.midpoint'
-    datatype: timestamp
-    mysql:datatype: DATETIME(6)
-    description: Midpoint of this visit. TAI, accurate to 10ms.
-  - name: midpointMjdTai
-    '@id': '#CcdVisit.midpointMjdTai'
-    datatype: double
-    description: Midpoint of this visit, expressed as Modified Julian Date,
-      International Atomic Time, accurate to 10ms.
-    fits:tunit: d
-  - name: expTime
-    '@id': '#CcdVisit.expTime'
-    datatype: double
-    description: Spatially-averaged duration of visit, accurate to 10ms.
-    fits:tunit: s
-  - name: obsStart
-    '@id': '#CcdVisit.obsStart'
-    datatype: timestamp
-    mysql:datatype: DATETIME(6)
-    description: Start of the visit, TAI, accurate to 10ms.
-  - name: obsStartMjdTai
-    '@id': '#CcdVisit.obsStartMjdTai'
-    datatype: double
-    description: Start of the visit, expressed as Modified
-      Julian Date, International Atomic Time, accurate to 10ms.
-  - name: darkTime
-    '@id': '#CcdVisit.darkTime'
-    datatype: double
-    description: Average dark current accumulation time, accurate to 10ms.
-    fits:tunit: s
-  - name: xSize
-    '@id': '#CcdVisit.xSize'
-    datatype: long
-    description: Number of columns in the image.
-    fits:tunit: pixel
-  - name: ySize
-    '@id': '#CcdVisit.ySize'
-    datatype: long
-    description: Number of rows in the image.
-    fits:tunit: pixel
-  - name: llcra
-    '@id': '#CcdVisit.llcra'
-    datatype: double
-    description: RA of lower left corner.
-    fits:tunit: deg
-  - name: llcdec
-    '@id': '#CcdVisit.llcdec'
-    datatype: double
-    description: Declination of lower left corner.
-    fits:tunit: deg
-  - name: ulcra
-    '@id': '#CcdVisit.ulcra'
-    datatype: double
-    description: RA of upper left corner.
-    fits:tunit: deg
-  - name: ulcdec
-    '@id': '#CcdVisit.ulcdec'
-    datatype: double
-    description: Declination of upper left corner.
-    fits:tunit: deg
-  - name: urcra
-    '@id': '#CcdVisit.urcra'
-    datatype: double
-    description: RA of upper right corner.
-    fits:tunit: deg
-  - name: urcdec
-    '@id': '#CcdVisit.urcdec'
-    datatype: double
-    description: Declination of upper right corner.
-    fits:tunit: deg
-  - name: lrcra
-    '@id': '#CcdVisit.lrcra'
-    datatype: double
-    description: RA of lower right corner.
-    fits:tunit: deg
-  - name: lrcdec
-    '@id': '#CcdVisit.lrcdec'
-    datatype: double
-    description: Declination of lower right corner.
-    fits:tunit: deg
-  - name: astromOffsetMean
-    '@id': '#CcdVisit.astromOffsetMean'
-    datatype: double
-    description: Mean offset of astrometric calibration matches (arcsec)
-    fits:tunit: arcsec
-  - name: astromOffsetStd
-    '@id': '#CcdVisit.astromOffsetStd'
-    datatype: double
-    description: Standard deviation of offsets of astrometric calibration matches (arcsec)
-    fits:tunit: arcsec
-  - name: nPsfStar
-    '@id': '#CcdVisit.nPsfStar'
-    datatype: int
-    description: Number of stars used for PSF model
-    fits:tunit:
-  - name: psfStarDeltaE1Median
-    '@id': '#CcdVisit.psfStarDeltaE1Median'
-    datatype: double
-    description: Median E1 residual (starE1 - psfE1) for psf stars
-    fits:tunit:
-  - name: psfStarDeltaE2Median
-    '@id': '#CcdVisit.psfStarDeltaE2Median'
-    datatype: double
-    description: Median E2 residual (starE2 - psfE2) for psf stars
-    fits:tunit:
-  - name: psfStarDeltaE1Scatter
-    '@id': '#CcdVisit.psfStarDeltaE1Scatter'
-    datatype: double
-    description: Scatter (via MAD) of E1 residual (starE1 - psfE1) for psf stars
-    fits:tunit:
-  - name: psfStarDeltaE2Scatter
-    '@id': '#CcdVisit.psfStarDeltaE2Scatter'
-    datatype: double
-    description: Scatter (via MAD) of E2 residual (starE2 - psfE2) for psf stars
-    fits:tunit:
-  - name: psfStarDeltaSizeMedian
-    '@id': '#CcdVisit.psfStarDeltaSizeMedian'
-    datatype: double
-    description: Median size residual (starSize - psfSize) for psf stars (pixel)
-    fits:tunit: pixel
-  - name: psfStarDeltaSizeScatter
-    '@id': '#CcdVisit.psfStarDeltaSizeScatter'
-    datatype: double
-    description: Scatter (via MAD) of size residual (starSize - psfSize) for stars (pixel)
-    fits:tunit: pixel
-  - name: psfStarScaledDeltaSizeScatter
-    '@id': '#CcdVisit.psfStarScaledDeltaSizeScatter'
-    datatype: double
-    description: Scatter (via MAD) of size residual scaled by median size squared
-    fits:tunit:
-  - name: psfTraceRadiusDelta
-    '@id': '#CcdVisit.psfTraceRadiusDelta'
-    datatype: double
-    description: Delta (max - min) of model psf trace radius values evaluated on a grid of unmasked pixels (pixel)
-    fits:tunit: pixel
-  - name: psfApFluxDelta
-    '@id': '#CcdVisit.psfApFluxDelta'
-    datatype: double
-    description: Delta (max - min) of model psf aperture flux (with aperture radius of max(2, 3*psfSigma)) values evaluated on a grid of unmasked pixels
-    fits:tunit:
-  - name: psfApCorrSigmaScaledDelta
-    '@id': '#CcdVisit.psfApCorrSigmaScaledDelta'
-    datatype: double
-    description: Delta (max - min) of psf flux aperture correction factors scaled (divided) by the psfSigma evaluated on a grid of unmasked pixels
-    fits:tunit:
-  - name: maxDistToNearestPsf
-    '@id': '#CcdVisit.maxDistToNearestPsf'
-    datatype: double
-    description: Maximum distance of an unmasked pixel to its nearest model psf star (pixel)
-    fits:tunit: pixel

@@ -2,7 +2,7 @@
 layout: schema
 title: Merian Schema
 schema: merian_dr1
-sort-index: 20
+sort-index: 2
 ---
 <p>
 The Merian DR1 Photo-z Catalog Schema describes the photo-z catalogs of the first data release of the Merian Survey. 

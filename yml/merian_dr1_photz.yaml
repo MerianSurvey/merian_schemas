@@ -1,6 +1,6 @@
 ---
-name: MerianDR1PhotozSchema
-"@id": "#merian_dr1_photz_Schema"
+name: MerianSchema
+"@id": "#hscSchema"
 description: The photo-z table contains descriptions of the photo-z results using the GaAP photometry from the Merian DR1 photometric catalog. 
 
 tables:

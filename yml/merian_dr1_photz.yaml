@@ -5,11 +5,6 @@ description: "The photo-z table contains descriptions of the photo-z results usi
 tables:
 - name: Object
   "@id": "#Object"
-  description: The Object table contains descriptions of the multi-epoch static astronomical
-    objects, in particular their astrophysical properties as derived from analysis
-    of the Sources that are associated with them. Note that fast moving objects are
-    kept in the MovingObject tables. Note that less-frequently used columns are stored
-    in a separate table called Object_Extra.
   columns:
   - name: objectId
     "@id": "#Object.objectId"

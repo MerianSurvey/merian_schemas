@@ -1,6 +1,6 @@
 ---
 layout: schema
-title: Merian Schema
+title: Merian Photometric Catalog Schema
 schema: merian_dr1
 sort-index: 2
 ---

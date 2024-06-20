@@ -236,7 +236,6 @@ tables:
     datatype: boolean
     description: Set to 1 if a source is not masked, has a full-color full-depth, likely not a star, fulfill several quality criteria. See Section 5.3 of the Merian survey paper.
     fits:tunit:
-
   # - name: coord_decErr
   #   "@id": "#Object.coord_decErr"
   #   datatype: float
@@ -342,13 +341,11 @@ tables:
   #   datatype: boolean
   #   description: True if source is in the inner region of a coadd patch
   #   fits:tunit:
-
   # - name: detect_isTractInner
   #   "@id": "#Object.detect_isTractInner"
   #   datatype: boolean
   #   description: True if source is in the inner region of a coadd tract
   #   fits:tunit:
-
   # - name: footprintArea
   #   "@id": "#Object.footprintArea"
   #   datatype: int
@@ -364,7 +361,6 @@ tables:
   #   datatype: long
   #   description: Unique ID of parent source. Reference band.
   #   fits:tunit:
-
   # - name: refBand
   #   "@id": "#Object.refBand"
   #   datatype: char
@@ -641,10 +637,6 @@ tables:
   #   datatype: double
   #   description: Flux uncertainty derived from linear least-squares fit of PSF model. Measured on g-band.
   #   fits:tunit: nJy
-
-
-
-
   # - name: g_gaapPsfFluxErr
   #   "@id": "#Object.g_gaapPsfFluxErr"
   #   datatype: double
@@ -655,43 +647,36 @@ tables:
   #   datatype: double
   #   description: GAaP Flux with PSF aperture after multiplying the seeing by 1.15. Forced on X-band.
   #   fits:tunit: nJy
-
   # - name: g_gaapOptimalFlux_flag_bigPsf
   #   "@id": "#Object.g_gaapOptimalFlux_flag_bigPsf"
   #   datatype: boolean
   #   description: The Gaussianized PSF is bigger than the aperture. Forced on X-band.
   #   fits:tunit:
- 
   # - name: g_gaap0p7Flux_flag_bigPsf
   #   "@id": "#Object.g_gaap0p7Flux_flag_bigPsf"
   #   datatype: boolean
   #   description: The Gaussianized PSF is bigger than the aperture. Forced on X-band.
   #   fits:tunit:
-
   # - name: g_gaap1p0Flux_flag_bigPsf
   #   "@id": "#Object.g_gaap1p0Flux_flag_bigPsf"
   #   datatype: boolean
   #   description: The Gaussianized PSF is bigger than the aperture. Forced on X-band.
   #   fits:tunit:
-
   # - name: g_gaap1p5Flux_flag_bigPsf
   #   "@id": "#Object.g_gaap1p5Flux_flag_bigPsf"
   #   datatype: boolean
   #   description: The Gaussianized PSF is bigger than the aperture. Forced on X-band.
   #   fits:tunit:
-
   # - name: g_gaap2p5Flux_flag_bigPsf
   #   "@id": "#Object.g_gaap2p5Flux_flag_bigPsf"
   #   datatype: boolean
   #   description: The Gaussianized PSF is bigger than the aperture. Forced on X-band.
   #   fits:tunit:
-
   # - name: g_gaap3p0Flux_flag_bigPsf
   #   "@id": "#Object.g_gaap3p0Flux_flag_bigPsf"
   #   datatype: boolean
   #   description: The Gaussianized PSF is bigger than the aperture. Forced on X-band.
   #   fits:tunit:
-
   # - name: g_gaapFlux_flag_edge
   #   "@id": "#Object.g_gaapFlux_flag_edge"
   #   datatype: boolean
@@ -707,13 +692,11 @@ tables:
   #   datatype: boolean
   #   description: General Failure Flag. Measured on g-band.
   #   fits:tunit:
-
   # - name: g_cModelFlux_inner
   #   "@id": "#Object.g_cModelFlux_inner"
   #   datatype: double
   #   description: Flux within the fit region, with no extrapolation. Forced on X-band.
   #   fits:tunit: nJy
-
   # - name: g_cModel_flag_apCorr
   #   "@id": "#Object.g_cModel_flag_apCorr"
   #   datatype: boolean
@@ -810,7 +793,6 @@ tables:
   #   description: Deprecated duplicate of g_dec.
   #   fits:tunit: deg
   #   ivoa:ucd: pos.eq.dec
-
   # - name: g_extendedness_flag
   #   "@id": "#Object.g_extendedness_flag"
   #   datatype: boolean
@@ -846,7 +828,6 @@ tables:
   #   datatype: double
   #   description: Flux within the fit region, with no extrapolation. Measured on g-band.
   #   fits:tunit: nJy
-
   # - name: g_free_psfFlux_flag
   #   "@id": "#Object.g_free_psfFlux_flag"
   #   datatype: boolean
@@ -897,7 +878,6 @@ tables:
   #   datatype: boolean
   #   description: General failure flag, set if anything went wrong. Measured on g-band.
   #   fits:tunit:
-
   # - name: g_inputCount_flag
   #   "@id": "#Object.g_inputCount_flag"
   #   datatype: boolean
@@ -1133,13 +1113,11 @@ tables:
   #   datatype: float
   #   description: Kron radius (sqrt(a*b)). Measured on g-band.
   #   fits:tunit:
-
   # - name: g_pixelFlags_clipped
   #   "@id": "#Object.g_pixelFlags_clipped"
   #   datatype: boolean
   #   description: Source footprint includes CLIPPED pixels. Measured on g-band.
   #   fits:tunit:
-
   # - name: g_pixelFlags_inexact_psf
   #   "@id": "#Object.g_pixelFlags_inexact_psf"
   #   datatype: boolean
@@ -1150,13 +1128,11 @@ tables:
   #   datatype: boolean
   #   description: Source center is close to INEXACT_PSF pixels. Measured on g-band.
   #   fits:tunit:
-
   # - name: g_pixelFlags_offimage
   #   "@id": "#Object.g_pixelFlags_offimage"
   #   datatype: boolean
   #   description: Source center is off image. Measured on g-band.
   #   fits:tunit:
-
   # - name: g_pixelFlags_saturatedCenter
   #   "@id": "#Object.g_pixelFlags_saturatedCenter"
   #   datatype: boolean
@@ -1172,7 +1148,6 @@ tables:
   #   datatype: boolean
   #   description: Source center is close to SENSOR_EDGE pixels. Measured on g-band.
   #   fits:tunit:
-
   # - name: g_pixelFlags_streak
   #   "@id": "#Object.g_pixelFlags_streak"
   #   datatype: boolean
@@ -1188,7 +1163,6 @@ tables:
   #   datatype: boolean
   #   description: This object has an invalid PSF (usually no inputs). Measured on g-band.
   #   fits:tunit:
-
   # - name: g_psfFlux_area
   #   "@id": "#Object.g_psfFlux_area"
   #   datatype: float
